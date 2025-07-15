@@ -83,7 +83,14 @@ public class LightControl : MonoBehaviour
 
     private void Status5()
     {
-        return;
+        foreach (Light light in Lights)
+        {
+            light.intensity = 1f;
+        }
+        foreach (GameObject light in Bulbs)
+        {
+            light.SetActive(true);
+        }
     }
 
     private float timer;

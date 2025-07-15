@@ -330,6 +330,7 @@
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.6/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/SteamVR.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/SteamVR_Actions.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/SteamVR_Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/SteamVR_Input_Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/SteamVR_Windows_EditorHelper.ref.dll"
@@ -370,9 +371,14 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/AdditionMethods.cs"
 "Assets/Scripts/Ballon.cs"
+"Assets/Scripts/BallonInteraction.cs"
+"Assets/Scripts/DoorInteraction.cs"
 "Assets/Scripts/LightControl.cs"
 "Assets/Scripts/Parameters.cs"
+"Assets/Scripts/Reductor.cs"
+"Assets/Scripts/ReductorInteraction.cs"
 "Assets/Scripts/Storage.cs"
+"Assets/Scripts/ValveInteraction.cs"
 -langversion:9.0
 /deterministic
 /optimize+

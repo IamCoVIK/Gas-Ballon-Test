@@ -125,17 +125,51 @@ public class Ballon : MonoBehaviour
         OTKMark.GetParameter();
         ValveLeaks.GetParameter();
         LeftPressure.GetParameter();*/
-        /*if (IsEmpty)
+        if (IsEmpty)
         {
             GasPressure = 0;
         }
-        else if (LeftPressure.Value)
+        /*else if (LeftPressure.Value)
         {
             GasPressure = 1; // ниже нормы
-        }
+        }*/
         else
         {
             GasPressure = 1; // норма
-        }*/
+        }
+    }
+
+    private Reductor _attachedReductor;
+    public Transform ReductorMountPoint;
+
+    public bool CanAttachReductor(Reductor regulator)
+    {
+        return _attachedReductor == null;
+    }
+
+    public void AttachReductor(Reductor regulator)
+    {
+        if (_attachedReductor != null)
+        {
+            Debug.LogError("Редуктор уже присоединен к этому баллону!");
+            return;
+        }
+
+        _attachedReductor = regulator;
+        regulator.AttachToBallon(this); // Сообщаем редуктору, что он присоединен
+    }
+
+    public void DetachReductor()
+    {
+        if (_attachedReductor == null) return;
+
+        _attachedReductor.DetachFromBallon(); // Сообщаем редуктору, что он отсоединен
+        _attachedReductor = null;
+    }
+
+    //Метод для получения точки соединения
+    public Vector3 GetReductorMountPoint()
+    {
+        return ReductorMountPoint.position;
     }
 }

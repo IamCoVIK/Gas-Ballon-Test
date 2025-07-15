@@ -60,10 +60,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.46f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BallonInteraction.cs" />
+    <Compile Include="Assets\Scripts\ValveInteraction.cs" />
     <Compile Include="Assets\Scripts\Parameters.cs" />
     <Compile Include="Assets\Scripts\AdditionMethods.cs" />
+    <Compile Include="Assets\Scripts\Reductor.cs" />
     <Compile Include="Assets\Scripts\Storage.cs" />
+    <Compile Include="Assets\Scripts\ReductorInteraction.cs" />
     <Compile Include="Assets\Scripts\LightControl.cs" />
+    <Compile Include="Assets\Scripts\DoorInteraction.cs" />
     <Compile Include="Assets\Scripts\Ballon.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1036,6 +1041,10 @@
     <ProjectReference Include="SteamVR.csproj">
       <Project>{48B251CB-7732-2ACC-6D05-40295E097EF9}</Project>
       <Name>SteamVR</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{AF26745A-7CEB-40F1-E34D-D3AEC4BF7156}</Project>
+      <Name>SteamVR_Actions</Name>
     </ProjectReference>
     <ProjectReference Include="SteamVR_Input_Editor.csproj">
       <Project>{3209A440-0517-3228-2602-2E26B4391369}</Project>
