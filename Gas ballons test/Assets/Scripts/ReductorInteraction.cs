@@ -11,6 +11,7 @@ public class ReductorInteraction : MonoBehaviour
     private FixedJoint fixedJoint; // Для крепления баллона к руке
     public Transform ValveHandle;
     public Reductor reductor;
+    public Transform AttachOffset;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class ReductorInteraction : MonoBehaviour
 
     private void HandHoverUpdate(Hand hand)
     {
-        if (reductor.IsAttachedAndLocked) return;
+        if (reductor.IsValveOpen) return;
         GrabTypes startingGrabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(gameObject);
 
@@ -37,14 +38,14 @@ public class ReductorInteraction : MonoBehaviour
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
             // Если редуктор присоединен, отсоединяем его
-            if (reductor._attachedBallon != null)
+            if (reductor._attachedBallon != null)                                      
             {
                 Debug.Log("Detaching...");
                 reductor.DetachFromBallon();
             }
 
             // Grab
-            hand.AttachObject(gameObject, startingGrabType);
+            hand.AttachObject(gameObject, startingGrabType, Hand.defaultAttachmentFlags, AttachOffset);
             hand.HoverLock(interactable);
             currentHand = hand;
 

@@ -6,6 +6,7 @@ public class BallonInteraction : MonoBehaviour
     private Interactable interactable;
     private Hand currentHand;
     private FixedJoint fixedJoint; // Для крепления баллона к руке
+    public Transform gripTransform;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class BallonInteraction : MonoBehaviour
         {
             // Grab
             hand.AttachObject(gameObject, startingGrabType);
+            transform.localPosition = new Vector3(100f, 100f, 100f);
             hand.HoverLock(interactable);
             currentHand = hand;
 

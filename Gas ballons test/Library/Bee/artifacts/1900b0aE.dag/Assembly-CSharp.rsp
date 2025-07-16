@@ -109,6 +109,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -372,7 +373,9 @@
 "Assets/Scripts/AdditionMethods.cs"
 "Assets/Scripts/Ballon.cs"
 "Assets/Scripts/BallonInteraction.cs"
+"Assets/Scripts/DoorHandle.cs"
 "Assets/Scripts/DoorInteraction.cs"
+"Assets/Scripts/InteractiveDoor.cs"
 "Assets/Scripts/LightControl.cs"
 "Assets/Scripts/Parameters.cs"
 "Assets/Scripts/Reductor.cs"

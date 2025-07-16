@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
 public class Reductor : MonoBehaviour
 {
     public Transform Pointer;
-    public float MinAngle = -90f;
-    public float MaxAngle = 90f;
+    public float MinAngle = 0f;
+    public float MaxAngle = 180f;
     public float MaxPressure = 200f;
     public float AttachDistance = 0.1f;
     public Transform ConnectionPoint;
@@ -18,13 +16,13 @@ public class Reductor : MonoBehaviour
     private Rigidbody _rb;
     private Interactable _interactable;
 
+    private Quaternion _initialPointerRotation;
     private Quaternion _initialValveRotation;
 
     public LayerMask excludedLayer;
 
     public bool block;
     public bool IsValveOpen = false; // Состояние вентиля (открыт/закрыт)
-    public bool IsAttachedAndLocked = false; // Блокировка отсоединения
 
     void Start()
     {
@@ -36,10 +34,10 @@ public class Reductor : MonoBehaviour
             Debug.LogError("Regulator требует SteamVR_Interactable компонент!");
         }
         _initialValveRotation = ValveHandle.localRotation;
+        _initialPointerRotation = Pointer.localRotation;
 
         block = false;
-        MinAngle = Pointer.rotation.x;
-        MaxAngle += Pointer.rotation.x;
+        IsValveOpen = false;
     }
 
     void Update()
@@ -51,10 +49,10 @@ public class Reductor : MonoBehaviour
         }
 
         //Если редуктор присоединен, то обновляем стрелку на редукторе
-        if (_attachedBallon != null && IsValveOpen)
-        {
-            UpdatePressureDisplay();
-        }
+        //if (_attachedBallon != null && IsValveOpen)
+        //{
+        //    UpdatePressureDisplay();
+        //}
     }
 
     void TryAttachToNearbyBallon()
@@ -125,7 +123,7 @@ public class Reductor : MonoBehaviour
     {
         Debug.Log("DetachFromCylinder called");
 
-        if (IsAttachedAndLocked) // Если заблокировано, выходим
+        if (IsValveOpen) // Если заблокировано, выходим
         {
             Debug.Log("DetachFromCylinder: Отсоединение заблокировано, Valve Open.");
             return;
@@ -154,40 +152,46 @@ public class Reductor : MonoBehaviour
         //IsValveOpen = false;
     }
 
-    public void UpdatePressureDisplay()
+    public void OpenPressure()
     {
         float pressure = 0f;
+        pressure = _attachedBallon.GasPressure;
+        float angle = (MaxAngle - MinAngle) / MaxPressure * pressure;
+        Quaternion targetRotation = _initialPointerRotation * Quaternion.Euler(angle, 0, 0);
+        Pointer.localRotation = targetRotation;
+        UpdateValveRotation(90f);
+        Debug.Log("Угол: " + angle);
+    }
 
-        if (_attachedBallon != null && IsValveOpen)
-        {
-            pressure = _attachedBallon.GasPressure;
-        }
-        if (!IsValveOpen)
-        {
-            Pointer.localRotation = Quaternion.Euler(0, 0, 0);
-            //float angle = Mathf.Lerp(MinAngle, MaxAngle, pressure / MaxPressure);
-            float angle = (MaxAngle - MinAngle) / MaxPressure * pressure;
-            Pointer.localRotation = Quaternion.Euler(angle, 0, 0);
-            UpdateValveRotation(90);
-        }
-        else
-        {
-            Pointer.localRotation = Quaternion.Euler(0, 0, 0);
-            UpdateValveRotation(0);
-        }
-        
+    public void ClosePressure()
+    {
+        float pressure = 0f;
+        float angle = (MaxAngle - MinAngle) / MaxPressure * pressure;
+        Quaternion targetRotation = _initialPointerRotation * Quaternion.Euler(angle, 0, 0);
+        Pointer.localRotation = targetRotation;
+        UpdateValveRotation(0f);
     }
 
     //Метод для открытия/закрытия вентиля
-    public void ToggleValve()
+    public void OpenValve()
     {
-        if (_attachedBallon != null)
+        if (_attachedBallon != null && !IsValveOpen)
         {
-            IsValveOpen = !IsValveOpen;
-            IsAttachedAndLocked = IsValveOpen; // Блокируем/разблокируем отсоединение
+            IsValveOpen = true;
             Debug.Log("Valve is now " + (IsValveOpen ? "Open" : "Closed"));
             //_interactable.enabled = !IsValveOpen;
-            UpdatePressureDisplay();
+            OpenPressure();
+        }
+    }
+
+    public void CloseValve()
+    {
+        if (_attachedBallon != null && IsValveOpen)
+        {
+            IsValveOpen = false;
+            Debug.Log("Valve is now " + (IsValveOpen ? "Open" : "Closed"));
+            //_interactable.enabled = !IsValveOpen;
+            ClosePressure();
         }
     }
 
@@ -195,8 +199,8 @@ public class Reductor : MonoBehaviour
     private void UpdateValveRotation(float angleChange)
     {
         if (ValveHandle == null) return;
-
         Quaternion targetRotation = _initialValveRotation * Quaternion.Euler(angleChange, 0, 0);
         ValveHandle.localRotation = targetRotation;
+        Debug.Log("Вентиль повёрнут на " + targetRotation);
     }
 }
