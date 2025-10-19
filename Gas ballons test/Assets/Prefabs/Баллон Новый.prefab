@@ -1973,6 +1973,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2171280744139852470}
   hitSound: {fileID: 6201757243932645875}
+  hardHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1235164349477500547}
+        m_TargetAssemblyTypeName: BallonExplosion, Assembly-CSharp
+        m_MethodName: Explode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1235164349477500547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,6 +2000,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c358d22aa2011d447815c5003c4015c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionSound: {fileID: 0}
   explosion: {fileID: 1762684900074373313, guid: d2cefb0cb253f6c46b41c1e37c00caf7, type: 3}
   ballon: {fileID: 8618696401239406456}
