@@ -67,12 +67,12 @@ public class Reductor : MonoBehaviour
                 if (cylinder != null)
                 {
                     Debug.Log("GasCylinder найден: " + cylinder.ToString());
-                    if (cylinder.CanAttachReductor(this))
+                    //if (cylinder.CanAttachReductor(this))
                     {
                         AttachToBallon(cylinder);
                         break;
                     }
-                    else
+                    //else
                     {
                         Debug.Log("CanAttachRegulator вернул false для " + cylinder.ToString());
                     }
@@ -108,8 +108,8 @@ public class Reductor : MonoBehaviour
 
         transform.SetParent(cylinder.transform);
         Vector3 offset = ConnectionPoint.position - transform.position;
-        Vector3 targetPosition = cylinder.GetReductorMountPoint() - offset;
-        transform.position = targetPosition;
+        //Vector3 targetPosition = cylinder.GetReductorMountPoint() - offset;
+        //transform.position = targetPosition;
         transform.rotation = cylinder.transform.rotation;
 
         block = true;

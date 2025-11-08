@@ -15,15 +15,35 @@ public class BallonValveInteraction : MonoBehaviour
     public AudioSource valveLeakSound;
 
     public float explosionTime;
+    private float explosionTimer;
+    private float ExplosionTimer
+    {
+        get 
+        {
+            return explosionTimer;
+        }
+        set
+        {
+            explosionTimer = value;
+            if (explosionTimer <= 0)
+            {
+                Explosion.Invoke();
+            }
+        }
+    }
+
 
     private bool isOpen = false;
     private Interactable interactable;
+    private Ballon ballon;
 
     public UnityEvent Explosion;
 
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        ExplosionTimer = explosionTime;
+        ballon = GetComponentInParent<Ballon>();
     }
 
     private void HandHoverUpdate(Hand hand)
@@ -38,11 +58,11 @@ public class BallonValveInteraction : MonoBehaviour
     {
         if (isOpen)
         {
-            explosionTime -= Time.deltaTime;
-            if (explosionTime <= 0 )
+            ExplosionTimer -= Time.deltaTime;
+            /*if (explosionTimer <= 0 )
             {
                 Explosion.Invoke();
-            }
+            }*/
         }
     }
 
@@ -52,11 +72,15 @@ public class BallonValveInteraction : MonoBehaviour
         {
             AnimateValve("Valve_Close");
             valveLeakSound.Stop();
+            ExplosionTimer = explosionTime;
         }
         else
         {
             AnimateValve("Valve_Open");
-            valveLeakSound.Play();
+            if (ballon.attachedReductor != null)
+            {
+                valveLeakSound.Play();
+            }
         }
 
         isOpen = !isOpen;

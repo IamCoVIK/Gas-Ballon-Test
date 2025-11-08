@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallonInteraction.cs" />
     <Compile Include="Assets\Scripts\ValveInteraction.cs" />
+    <Compile Include="Assets\Scripts\DetachedReductorBehavior.cs" />
     <Compile Include="Assets\Scripts\Parameters.cs" />
     <Compile Include="Assets\Scripts\AdditionMethods.cs" />
     <Compile Include="Assets\Scripts\BallonPhysics.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\RulerInteraction.cs" />
     <Compile Include="Assets\Scripts\LightControl.cs" />
     <Compile Include="Assets\Scripts\BallonValveInteraction.cs" />
+    <Compile Include="Assets\Scripts\FireExt.cs" />
     <Compile Include="Assets\Scripts\DoorHandle.cs" />
     <Compile Include="Assets\Scripts\BallonExplosion.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction.cs" />

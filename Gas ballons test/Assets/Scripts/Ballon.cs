@@ -139,37 +139,22 @@ public class Ballon : MonoBehaviour
         }
     }
 
-    private Reductor _attachedReductor;
-    public Transform ReductorMountPoint;
+    public GameObject attachedReductor;
+    public bool withReductor = false;
 
-    public bool CanAttachReductor(Reductor regulator)
+    private void Start()
     {
-        return _attachedReductor == null;
+        attachedReductor.SetActive(false);
     }
 
-    public void AttachReductor(Reductor regulator)
+    public void AttachReductor()
     {
-        if (_attachedReductor != null)
+        if (withReductor)
         {
             Debug.LogError("Редуктор уже присоединен к этому баллону!");
             return;
         }
-
-        _attachedReductor = regulator;
-        regulator.AttachToBallon(this); // Сообщаем редуктору, что он присоединен
-    }
-
-    public void DetachReductor()
-    {
-        if (_attachedReductor == null) return;
-
-        _attachedReductor.DetachFromBallon(); // Сообщаем редуктору, что он отсоединен
-        _attachedReductor = null;
-    }
-
-    //Метод для получения точки соединения
-    public Vector3 GetReductorMountPoint()
-    {
-        return ReductorMountPoint.position;
+        withReductor = true;
+        attachedReductor.SetActive(true);
     }
 }
