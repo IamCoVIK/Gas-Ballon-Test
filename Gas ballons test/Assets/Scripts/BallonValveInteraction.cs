@@ -32,10 +32,10 @@ public class BallonValveInteraction : MonoBehaviour
         }
     }
 
-
-    private bool isOpen = false;
+    public bool isOpen = false;
     private Interactable interactable;
     private Ballon ballon;
+    public AttachedReductor attachedReductor;
 
     public UnityEvent Explosion;
 
@@ -58,11 +58,10 @@ public class BallonValveInteraction : MonoBehaviour
     {
         if (isOpen)
         {
-            ExplosionTimer -= Time.deltaTime;
-            /*if (explosionTimer <= 0 )
+            if (!ballon.withReductor)
             {
-                Explosion.Invoke();
-            }*/
+                ExplosionTimer -= Time.deltaTime;
+            }
         }
     }
 
@@ -73,13 +72,21 @@ public class BallonValveInteraction : MonoBehaviour
             AnimateValve("Valve_Close");
             valveLeakSound.Stop();
             ExplosionTimer = explosionTime;
+            if (ballon.withReductor)
+            {
+                attachedReductor.ArrowDown();
+            }
         }
         else
         {
             AnimateValve("Valve_Open");
-            if (ballon.attachedReductor != null)
+            if (!ballon.withReductor)
             {
                 valveLeakSound.Play();
+            }
+            else
+            {
+                attachedReductor.ArrowUp(ballon.GasPressure);
             }
         }
 
@@ -90,5 +97,10 @@ public class BallonValveInteraction : MonoBehaviour
     void AnimateValve(string anim)
     {
         valveAnimator.SetTrigger(anim);
+    }
+
+    public void PlayLeakSound()
+    {
+        valveLeakSound.Play();
     }
 }

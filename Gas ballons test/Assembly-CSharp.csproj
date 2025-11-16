@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\BallonInteraction.cs" />
     <Compile Include="Assets\Scripts\ValveInteraction.cs" />
     <Compile Include="Assets\Scripts\DetachedReductorBehavior.cs" />
+    <Compile Include="Assets\Scripts\AttachedReductor.cs" />
     <Compile Include="Assets\Scripts\Parameters.cs" />
     <Compile Include="Assets\Scripts\AdditionMethods.cs" />
     <Compile Include="Assets\Scripts\BallonPhysics.cs" />

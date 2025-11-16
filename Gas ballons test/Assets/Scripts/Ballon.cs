@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 /// <summary>
 /// Газы в баллонах
@@ -139,22 +141,45 @@ public class Ballon : MonoBehaviour
         }
     }
 
-    public GameObject attachedReductor;
+    [SerializeField] private GameObject Reductor;
     public bool withReductor = false;
+    [SerializeField] private BallonValveInteraction ballonValveInteraction;
+    [SerializeField] private AudioSource attachSound;
 
     private void Start()
     {
-        attachedReductor.SetActive(false);
+       Reductor.SetActive(false);
     }
 
     public void AttachReductor()
     {
+        if (ballonValveInteraction.isOpen)
+        {
+            return;
+        }
         if (withReductor)
         {
             Debug.LogError("Редуктор уже присоединен к этому баллону!");
             return;
         }
+        Reductor.SetActive(true);
         withReductor = true;
-        attachedReductor.SetActive(true);
+        attachSound.Play();
+    }
+
+    public void DetachReductor()
+    {
+        if (!withReductor)
+        {
+            Debug.LogError("Редуктор ещё не присоединен к этому баллону!");
+            return;
+        }
+        Reductor.SetActive(false);
+        withReductor = false;
+        attachSound.Play();
+        if (ballonValveInteraction.isOpen)
+        {
+            ballonValveInteraction.PlayLeakSound();
+        }
     }
 }

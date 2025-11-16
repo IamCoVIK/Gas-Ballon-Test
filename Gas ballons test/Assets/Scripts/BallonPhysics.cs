@@ -12,7 +12,7 @@ public class BallonPhysics : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (rb.velocity.magnitude > 0.75f)
+        if (rb.velocity.magnitude > 1f)
         {
             hitSound.Play();
             if (rb.velocity.magnitude > 3f)

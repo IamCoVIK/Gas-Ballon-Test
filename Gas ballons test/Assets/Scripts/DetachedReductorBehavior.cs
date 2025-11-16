@@ -8,16 +8,15 @@ public class DetachedReductorBehavior : MonoBehaviour
 {
     private bool nearBallon = false;
     private Ballon tempBallon;
+    public Rigidbody rb;
+    public AudioSource hitSound;
 
     public void AttachToBallon()
     {
-        Debug.Log("1");
         if (nearBallon)
         {
-            Debug.Log("2");
             if (!tempBallon.withReductor)
             {
-                Debug.Log("3");
                 tempBallon.AttachReductor();
                 Destroy(gameObject);
             }
@@ -39,6 +38,14 @@ public class DetachedReductorBehavior : MonoBehaviour
         {
             nearBallon = false;
             tempBallon = null;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (rb.velocity.magnitude > 1f)
+        {
+            hitSound.Play();
         }
     }
 }
