@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638874698624668594
-    m_Hash: 1045915411
+      ticks: 638994940792536967
+    m_Hash: 4133136235
   m_LockFileStatus:
     m_FilePath: D:/Gas-Ballon-Test/Gas ballons test/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638874698625261585
-    m_Hash: 3314235816
+      ticks: 638994940794490469
+    m_Hash: 1158185843
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -137,6 +137,12 @@ m_ResolvedPackages:
     - 2.7.1
     - 2.8.1
     - 2.8.2
+    - 2.9.1
+    - 2.9.2
+    - 2.9.3
+    - 2.10.0
+    - 2.10.1
+    - 2.10.2
     compatible:
     - 2.4.4
     - 2.5.1
@@ -145,6 +151,12 @@ m_ResolvedPackages:
     - 2.7.1
     - 2.8.1
     - 2.8.2
+    - 2.9.1
+    - 2.9.2
+    - 2.9.3
+    - 2.10.0
+    - 2.10.1
+    - 2.10.2
     recommended: 2.4.4
     deprecated: []
   dependencies: []
@@ -347,9 +359,11 @@ m_ResolvedPackages:
     - 3.3.0
     - 3.4.0
     - 3.5.0
+    - 3.5.1
     compatible:
     - 3.4.0
     - 3.5.0
+    - 3.5.1
     recommended: 3.4.0
     deprecated: []
   dependencies:
@@ -520,6 +534,8 @@ m_ResolvedPackages:
     - 3.2.0-pre.10
     - 3.2.0-pre.11
     - 3.2.0-pre.12
+    - 3.2.0-pre.13
+    - 3.2.0-pre.14
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -539,6 +555,8 @@ m_ResolvedPackages:
     - 3.2.0-pre.10
     - 3.2.0-pre.11
     - 3.2.0-pre.12
+    - 3.2.0-pre.13
+    - 3.2.0-pre.14
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.9
@@ -695,6 +713,7 @@ m_ResolvedPackages:
     - 1.8.6
     - 1.8.7
     - 1.8.8
+    - 1.8.9
     compatible:
     - 1.7.6
     - 1.7.7
@@ -707,6 +726,7 @@ m_ResolvedPackages:
     - 1.8.6
     - 1.8.7
     - 1.8.8
+    - 1.8.9
     recommended: 1.7.7
     deprecated: []
   dependencies:
@@ -892,13 +912,15 @@ m_ResolvedPackages:
     - 1.9.6
     - 1.9.7
     - 1.9.8
+    - 1.9.9
     compatible:
     - 1.9.4
     - 1.9.5
     - 1.9.6
     - 1.9.7
     - 1.9.8
-    recommended: 1.9.8
+    - 1.9.9
+    recommended: 1.9.9
     deprecated:
     - 1.8.0-pre.1
   dependencies:
@@ -1019,6 +1041,63 @@ m_ResolvedPackages:
   isAssetStorePackage: 0
   datePublishedTicks: 0
   documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  fingerprint: 
+- packageId: com.whisper.unity@https://github.com/Macoron/whisper.unity.git?path=/Packages/com.whisper.unity
+  testable: 0
+  isDirectDependency: 1
+  version: 1.4.0
+  source: 5
+  resolvedPath: D:\Gas-Ballon-Test\Gas ballons test\Library\PackageCache\com.whisper.unity@529a628a91
+  assetPath: Packages/com.whisper.unity
+  name: com.whisper.unity
+  displayName: Whisper
+  author:
+    name: Macoron
+    email: 
+    url: https://github.com/Macoron
+  category: 
+  type: 
+  description: 'Whisper is high-performance automatic speech recognition (ASR) model,
+    developed by OpenAI.
+
+
+    This is Unity bindings of whisper.cpp infrence implementation.'
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/Macoron/whisper.unity/blob/master/README.md
   hasRepository: 0
   repository:
     type: 
@@ -3044,12 +3123,16 @@ m_ResolvedPackages:
     - 4.4.1
     - 4.5.0
     - 4.5.1
+    - 4.5.2
+    - 4.5.3
     compatible:
     - 4.4.0
     - 4.4.1
     - 4.5.0
     - 4.5.1
-    recommended: 4.5.1
+    - 4.5.2
+    - 4.5.3
+    recommended: 4.5.3
     deprecated: []
   dependencies:
   - name: com.unity.modules.vr
@@ -3160,11 +3243,15 @@ m_ResolvedPackages:
     - 2.1.10
     - 2.1.11
     - 2.1.12
+    - 2.1.13
+    - 3.0.0
     compatible:
     - 2.1.10
     - 2.1.11
     - 2.1.12
-    recommended: 2.1.12
+    - 2.1.13
+    - 3.0.0
+    recommended: 2.1.13
     deprecated: []
   dependencies:
   - name: com.unity.modules.vr
@@ -3262,10 +3349,12 @@ m_ResolvedPackages:
     - 2.0.21
     - 2.0.22
     - 2.0.23
+    - 2.0.25
     compatible:
     - 2.0.22
     - 2.0.23
-    recommended: 2.0.23
+    - 2.0.25
+    recommended: 2.0.25
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3375,13 +3464,18 @@ m_ResolvedPackages:
     - 3.0.34
     - 3.0.35
     - 3.0.36
+    - 3.0.37
+    - 3.0.38
     compatible:
     - 3.0.31
     - 3.0.34
     - 3.0.35
     - 3.0.36
-    recommended: 3.0.36
-    deprecated: []
+    - 3.0.37
+    - 3.0.38
+    recommended: 3.0.38
+    deprecated:
+    - 3.0.37
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -3514,9 +3608,11 @@ m_ResolvedPackages:
     - 0.1.0-preview.1
     - 0.1.0-preview.2
     - 1.0.0
+    - 1.0.1
     compatible:
     - 1.0.0
-    recommended: 1.0.0
+    - 1.0.1
+    recommended: 1.0.1
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -3590,10 +3686,12 @@ m_ResolvedPackages:
     - 1.1.1
     - 1.2.2
     - 1.2.3
+    - 1.2.4
     compatible:
     - 1.2.2
     - 1.2.3
-    recommended: 1.2.3
+    - 1.2.4
+    recommended: 1.2.4
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -3822,9 +3920,11 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     - 1.2.6
+    - 1.2.7
     compatible:
     - 1.2.6
-    recommended: 1.2.6
+    - 1.2.7
+    recommended: 1.2.7
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3904,9 +4004,11 @@ m_ResolvedPackages:
     - 2.0.0
     - 2.0.1
     - 2.1.0
+    - 2.1.1
     compatible:
     - 2.0.1
     - 2.1.0
+    - 2.1.1
     recommended: 2.0.1
     deprecated: []
   dependencies: []

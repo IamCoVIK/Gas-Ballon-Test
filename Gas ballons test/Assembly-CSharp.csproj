@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\BallonInteraction.cs" />
     <Compile Include="Assets\Scripts\ValveInteraction.cs" />
     <Compile Include="Assets\Scripts\DetachedReductorBehavior.cs" />
+    <Compile Include="Assets\Scripts\Notebook.cs" />
     <Compile Include="Assets\Scripts\AttachedReductor.cs" />
     <Compile Include="Assets\Scripts\Parameters.cs" />
     <Compile Include="Assets\Scripts\AdditionMethods.cs" />
@@ -960,6 +961,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.whisper.unity">
+      <HintPath>Library\ScriptAssemblies\com.whisper.unity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
       <Private>False</Private>
@@ -994,6 +999,10 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.whisper.unity.editor">
+      <HintPath>Library\ScriptAssemblies\com.whisper.unity.editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">

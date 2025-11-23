@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\Gas-Ballon-Test\\Gas ballons test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\attachedreductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\ballonvalveinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballonvalveinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\attachedreductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attachedreductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\ballonvalveinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballonvalveinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\ballonphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballonphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\detachedreductorbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballonexplosion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\ballonphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballonphysics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\ballon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ballon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,6 +51,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Notebook.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Notebook.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Notebook.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Notebook.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Notebook.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:05:04.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AttachedReductor.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\AttachedReductor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AttachedReductor.cs",
@@ -54,12 +71,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AttachedReductor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T07:44:24.902Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T07:44:24.902Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "DetachedReductorBehavior.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\DetachedReductorBehavior.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DetachedReductorBehavior.cs",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "Assets\\Scripts\\DetachedReductorBehavior.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwC0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T06:32:31.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-30T06:32:31.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "BallonExplosion.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonExplosion.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonExplosion.cs",
@@ -80,8 +95,7 @@
               "RelativeToolTip": "Assets\\Scripts\\BallonExplosion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T10:58:39.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T10:58:39.728Z"
             },
             {
               "$type": "Document",
@@ -91,14 +105,13 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonPhysics.cs",
               "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonPhysics.cs",
               "RelativeToolTip": "Assets\\Scripts\\BallonPhysics.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T10:39:22.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T10:39:22.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BallonValveInteraction.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonValveInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonValveInteraction.cs",
@@ -106,25 +119,23 @@
               "RelativeToolTip": "Assets\\Scripts\\BallonValveInteraction.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAIwE0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T09:56:32.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-16T09:56:32.695Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "RulerInteraction.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\RulerInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RulerInteraction.cs",
               "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\RulerInteraction.cs",
               "RelativeToolTip": "Assets\\Scripts\\RulerInteraction.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwJYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T11:03:20.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T11:03:20.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Ballon.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Ballon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ballon.cs",
@@ -132,8 +143,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Ballon.cs",
               "ViewState": "AgIAAH0AAAAAAAAAAAAwwLIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:54:17.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T09:54:17.578Z"
             }
           ]
         }
