@@ -76,9 +76,12 @@
     <Compile Include="Assets\Scripts\BallonValveInteraction.cs" />
     <Compile Include="Assets\Scripts\FireExt.cs" />
     <Compile Include="Assets\Scripts\DoorHandle.cs" />
+    <Compile Include="Assets\Samples\Whisper\2 - Microphone\MicrophoneDemo.cs" />
+    <Compile Include="Assets\Scripts\TestVoice.cs" />
     <Compile Include="Assets\Scripts\BallonExplosion.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction.cs" />
     <Compile Include="Assets\Scripts\Ballon.cs" />
+    <Compile Include="Assets\Scripts\TestHints.cs" />
     <Compile Include="Assets\Scripts\InteractiveDoor.cs" />
   </ItemGroup>
   <ItemGroup>
