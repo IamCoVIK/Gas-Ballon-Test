@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "D:\\Gas-Ballon-Test\\Gas ballons test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\testhints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\doorinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\doorinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\belt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\belt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\testhints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testhints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\steamvr\\interactionsystem\\core\\scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|solutionrelative:assets\\steamvr\\interactionsystem\\core\\scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\steamvr\\interactionsystem\\core\\scripts\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,18 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\steamvr\\interactionsystem\\hints\\scripts\\controllerbuttonhints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|solutionrelative:assets\\steamvr\\interactionsystem\\hints\\scripts\\controllerbuttonhints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\steamvr\\interactionsystem\\core\\scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48B251CB-7732-2ACC-6D05-40295E097EF9}|SteamVR.csproj|solutionrelative:assets\\steamvr\\interactionsystem\\core\\scripts\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rulerinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\ballonvalveinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,77 +69,50 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Interactable.cs",
-              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
-              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
-              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
-              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAkwPgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T08:50:10.382Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestHints.cs",
-              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\TestHints.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TestHints.cs",
-              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\TestHints.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TestHints.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Belt.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Belt.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Belt.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Belt.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Belt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T08:49:30.578Z",
+              "WhenOpened": "2025-12-06T09:51:07.923Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Hand.cs",
-              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
-              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
-              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
-              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DoorInteraction.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\DoorInteraction.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DoorInteraction.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\DoorInteraction.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DoorInteraction.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBUAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T08:46:26.895Z",
+              "WhenOpened": "2025-12-06T08:54:30.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ControllerButtonHints.cs",
-              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
-              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
-              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
-              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
-              "ViewState": "AgIAACIDAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T08:43:25.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Notebook.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Notebook.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Notebook.cs",
               "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Notebook.cs",
               "RelativeToolTip": "Assets\\Scripts\\Notebook.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwIIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T10:05:04.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T10:05:04.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AttachedReductor.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\AttachedReductor.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AttachedReductor.cs",
@@ -143,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "DetachedReductorBehavior.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\DetachedReductorBehavior.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DetachedReductorBehavior.cs",
@@ -155,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "BallonExplosion.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonExplosion.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonExplosion.cs",
@@ -167,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "BallonPhysics.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonPhysics.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonPhysics.cs",
@@ -179,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "BallonValveInteraction.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\BallonValveInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BallonValveInteraction.cs",
@@ -191,19 +172,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "RulerInteraction.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\RulerInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\RulerInteraction.cs",
               "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\RulerInteraction.cs",
               "RelativeToolTip": "Assets\\Scripts\\RulerInteraction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T11:03:20.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
+              "Title": "ControllerButtonHints.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
+              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
+              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Hints\\Scripts\\ControllerButtonHints.cs",
+              "ViewState": "AgIAACIDAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T08:43:25.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hand.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
+              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
+              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Hand.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T08:46:26.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TestHints.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\TestHints.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestHints.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\TestHints.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestHints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T08:49:30.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Interactable.cs",
+              "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
+              "RelativeDocumentMoniker": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
+              "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
+              "RelativeToolTip": "Assets\\SteamVR\\InteractionSystem\\Core\\Scripts\\Interactable.cs",
+              "ViewState": "AgIAADoBAAAAAAAAAAA6wPoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T08:50:10.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Ballon.cs",
               "DocumentMoniker": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\Ballon.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ballon.cs",

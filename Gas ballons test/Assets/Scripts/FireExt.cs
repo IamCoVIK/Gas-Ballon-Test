@@ -18,7 +18,6 @@ public class FireExt : MonoBehaviour
     private Rigidbody rb;
 
     private bool isFiring = false;
-    private bool isHeldByPlayer = false;
     private Hand holdingHand; // Добавляем ссылку на руку, которая держит предмет
 
     void Start()
@@ -94,14 +93,12 @@ public class FireExt : MonoBehaviour
 
     public void PickedUp()
     {
-        isHeldByPlayer = true;
         // Получаем ссылку на руку, которая подняла предмет
         holdingHand = interactable.attachedToHand;
     }
 
     public void UnpickedUp()
     {
-        isHeldByPlayer = false;
         holdingHand = null; // Сбрасываем ссылку на руку
 
         // Останавливаем измерение при отпускании предмета

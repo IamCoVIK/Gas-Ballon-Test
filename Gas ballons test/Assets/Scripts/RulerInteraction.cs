@@ -22,14 +22,16 @@ public class RulerInteraction : MonoBehaviour
 
     [Header("UI Settings")]
     public TMP_Text distanceText;
+    public AudioSource hitSound;
 
     private bool isFiring = false;
-    private bool isHeldByPlayer = false;
-    private Hand holdingHand; // Добавляем ссылку на руку, которая держит предмет
+    private Hand holdingHand;
+    private Rigidbody rb;
 
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        rb = GetComponent<Rigidbody>();
 
         if (rayOrigin == null)
         {
@@ -145,20 +147,24 @@ public class RulerInteraction : MonoBehaviour
 
     public void PickedUp()
     {
-        isHeldByPlayer = true;
-        // Получаем ссылку на руку, которая подняла предмет
         holdingHand = interactable.attachedToHand;
     }
 
     public void UnpickedUp()
     {
-        isHeldByPlayer = false;
-        holdingHand = null; // Сбрасываем ссылку на руку
+        holdingHand = null;
 
-        // Останавливаем измерение при отпускании предмета
         if (isFiring)
         {
             StopFiring();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (rb.velocity.magnitude > 1f)
+        {
+            hitSound.Play();
         }
     }
 }
