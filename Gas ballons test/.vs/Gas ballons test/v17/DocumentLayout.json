@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\doorinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|d:\\gas-ballon-test\\gas ballons test\\assets\\scripts\\belt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|D:\\Gas-Ballon-Test\\Gas ballons test\\assets\\scripts\\belt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{24488383-E8DF-9326-E774-3A5A3A1F7591}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\belt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -82,8 +82,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Belt.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T09:51:07.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-06T09:51:07.923Z"
             },
             {
               "$type": "Document",
@@ -93,7 +92,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\DoorInteraction.cs",
               "ToolTip": "D:\\Gas-Ballon-Test\\Gas ballons test\\Assets\\Scripts\\DoorInteraction.cs",
               "RelativeToolTip": "Assets\\Scripts\\DoorInteraction.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBUAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-06T08:54:30.844Z",
               "EditorCaption": ""

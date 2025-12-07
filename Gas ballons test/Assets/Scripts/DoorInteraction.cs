@@ -17,8 +17,15 @@ public class DoorInteraction : MonoBehaviour
 
     }
 
-    private void HandHoverUpdate(Hand hand)
+    private void Update()
     {
-        Debug.Log(circularDrive.outAngle);
+        if (interactable.attachedToHand == null)
+        {
+            circularDrive.outAngle = transform.eulerAngles.y;
+        }
+        else
+        {
+            
+        }
     }
 }
