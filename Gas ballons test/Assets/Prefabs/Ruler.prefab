@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 8030017554516754828}
   - component: {fileID: 7345337922554120239}
   - component: {fileID: -1472854289506025360}
+  - component: {fileID: 2332006481424163790}
   m_Layer: 0
   m_Name: Ruler
   m_TagString: Untagged
@@ -777,6 +778,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &2332006481424163790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227648403485439347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 6
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  - actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  hints:
+  - "\u0412\u0437\u044F\u0442\u044C \u0432 \u0440\u0443\u043A\u0443"
+  - "\u0418\u0437\u043C\u0435\u0440\u0438\u0442\u044C \u0440\u0430\u0441\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
 --- !u!1 &4311077145714858842
 GameObject:
   m_ObjectHideFlags: 0

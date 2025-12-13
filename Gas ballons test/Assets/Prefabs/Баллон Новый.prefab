@@ -592,7 +592,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 652d8090f23bc154595be4ed6764be2e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1066,6 +1066,61 @@ Transform:
   - {fileID: 1676907350151150422}
   m_Father: {fileID: 4901699791323503140}
   m_LocalEulerAnglesHint: {x: -46.943, y: 0, z: 0}
+--- !u!1 &4161000113159077935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8407046307149245073}
+  - component: {fileID: 8207605904462155501}
+  m_Layer: 0
+  m_Name: "\u041A\u043E\u043B\u043B\u0430\u0439\u0434\u0435\u0440"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8407046307149245073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161000113159077935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6525317961329541853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8207605904462155501
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161000113159077935}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.07
+  m_Height: 0.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4199390407432053124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,8 +1131,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6525317961329541853}
   - component: {fileID: 580121709787882485}
+  - component: {fileID: 6799305409356557307}
   - component: {fileID: 8100407014314956740}
   - component: {fileID: 8712938688066678407}
+  - component: {fileID: 4460902582616201220}
   m_Layer: 0
   m_Name: "\u0412\u0435\u043D\u0442\u0438\u043B\u044C"
   m_TagString: Untagged
@@ -1101,6 +1158,7 @@ Transform:
   - {fileID: 5155985502512969354}
   - {fileID: 5380880732097232436}
   - {fileID: 7863698444733532903}
+  - {fileID: 8407046307149245073}
   m_Father: {fileID: 4624434759059095593}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &580121709787882485
@@ -1155,6 +1213,68 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &6799305409356557307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199390407432053124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f32883eed859804dbb0c5fedac91496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisOfRotation: 1
+  childCollider: {fileID: 8207605904462155501}
+  linearMapping: {fileID: 0}
+  hoverLock: 1
+  limited: 1
+  frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
+  onFrozenDistanceThreshold:
+    m_PersistentCalls:
+      m_Calls: []
+  minAngle: -270
+  freezeOnMin: 0
+  onMinAngle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3180652495454709146}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  maxAngle: 0
+  freezeOnMax: 0
+  onMaxAngle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3180652495454709146}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  forceStart: 1
+  startAngle: 0
+  rotateGameObject: 1
+  debugPath: 0
+  dbgPathLimit: 50
+  debugText: {fileID: 0}
+  outAngle: 0
 --- !u!95 &8100407014314956740
 Animator:
   serializedVersion: 5
@@ -1163,7 +1283,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4199390407432053124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1474d32936388e642aac0febb5bf1eb9, type: 2}
   m_CullingMode: 0
@@ -1198,6 +1318,9 @@ MonoBehaviour:
   explosionTime: 5
   isOpen: 0
   attachedReductor: {fileID: 7428317349748022290}
+  arrow: {fileID: 3855293680692651920}
+  arrowMinAngle: -46.943
+  arrowMaxAngle: 225
   Explosion:
     m_PersistentCalls:
       m_Calls:
@@ -1213,6 +1336,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4460902582616201220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199390407432053124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 4
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hints:
+  - "\u041A\u0440\u0443\u0442\u0438\u0442\u044C"
 --- !u!1 &4547118957689383864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2693,7 @@ GameObject:
   - component: {fileID: 956442140759509682}
   - component: {fileID: 7428317349748022290}
   - component: {fileID: 4147734866169439467}
+  - component: {fileID: 4787566493528344043}
   m_Layer: 0
   m_Name: "\u0420\u0435\u0434\u0443\u043A\u0442\u043E\u0440"
   m_TagString: Untagged
@@ -2654,7 +2796,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6481853641056148563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 382a4ce044188da4b8d982d6108f06cf, type: 2}
   m_CullingMode: 0
@@ -2667,6 +2809,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4787566493528344043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6481853641056148563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 2
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hints:
+  - "\u041E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C"
 --- !u!1 &6530171957666637068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2869,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e67e1dbadcff2064091cb9a74f5a65f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0572944a07bc6948ae5629b372dc982, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -3509,6 +3669,7 @@ GameObject:
   - component: {fileID: 4190656313932100053}
   - component: {fileID: 5344976371196044787}
   - component: {fileID: 1235164349477500547}
+  - component: {fileID: 8295207310022442170}
   m_Layer: 0
   m_Name: "\u0411\u0430\u043B\u043B\u043E\u043D \u041D\u043E\u0432\u044B\u0439"
   m_TagString: Untagged
@@ -3734,6 +3895,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1762684900074373313, guid: d2cefb0cb253f6c46b41c1e37c00caf7, type: 3}
   ballon: {fileID: 8618696401239406456}
+--- !u!114 &8295207310022442170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8618696401239406456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 3
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hints:
+  - "\u0412\u0437\u044F\u0442\u044C \u0432 \u0440\u0443\u043A\u0443"
 --- !u!1 &8986926414897236298
 GameObject:
   m_ObjectHideFlags: 0

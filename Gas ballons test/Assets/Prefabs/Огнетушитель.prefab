@@ -5155,6 +5155,7 @@ GameObject:
   - component: {fileID: 362200350506253631}
   - component: {fileID: 6095590190192456589}
   - component: {fileID: 41398153571233684}
+  - component: {fileID: 3456126245137690227}
   m_Layer: 0
   m_Name: "\u041E\u0433\u043D\u0435\u0442\u0443\u0448\u0438\u0442\u0435\u043B\u044C"
   m_TagString: Untagged
@@ -5379,6 +5380,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &3456126245137690227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798906287076956195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 8
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  - actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  hints:
+  - "\u0412\u0437\u044F\u0442\u044C \u0432 \u0440\u0443\u043A\u0443"
+  - "\u0412\u044B\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u043F\u0435\u043D\u0443"
 --- !u!1 &4571865045229739853
 GameObject:
   m_ObjectHideFlags: 0

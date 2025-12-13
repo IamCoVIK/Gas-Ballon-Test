@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 4106751387431913921}
   - component: {fileID: 48353625212455783}
   - component: {fileID: 7273011353654455425}
+  - component: {fileID: 4350820879063473769}
   m_Layer: 0
   m_Name: "\u041A\u0438\u0441\u043B\u043E\u0440\u043E\u0434\u043D\u044B\u0439 \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440
     \u041D\u043E\u0432\u044B\u0439"
@@ -405,6 +406,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 48353625212455783}
   hitSound: {fileID: 3808604200194422240}
+--- !u!114 &4350820879063473769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406086025185488722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 1
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hints:
+  - "\u0412\u0437\u044F\u0442\u044C \u0432 \u0440\u0443\u043A\u0443"
 --- !u!1 &2716425145411404166
 GameObject:
   m_ObjectHideFlags: 0

@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 1836289120836363770}
   - component: {fileID: 1644801906905328738}
   - component: {fileID: 5196988066469132497}
+  - component: {fileID: 4653626414150481954}
   m_Layer: 0
   m_Name: "\u0411\u043B\u043E\u043A\u043D\u043E\u0442"
   m_TagString: Untagged
@@ -627,6 +628,28 @@ MonoBehaviour:
   vadStopTime: 3
   microphoneDropdown: {fileID: 0}
   microphoneDefaultLabel: Default microphone
+--- !u!114 &4653626414150481954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898156188482347834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4ccff791ce7ca40a0f7de62dad5541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 7
+  actions:
+  - actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  - actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  hints:
+  - "\u0412\u0437\u044F\u0442\u044C \u0432 \u0440\u0443\u043A\u0443"
+  - "\u0412\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0437\u0430\u043F\u0438\u0441\u044C
+    \u0433\u043E\u043B\u043E\u0441\u0430"
 --- !u!1 &7849226427155215435
 GameObject:
   m_ObjectHideFlags: 0
