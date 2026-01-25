@@ -393,6 +393,7 @@
 "Assets/Scripts/RulerInteraction.cs"
 "Assets/Scripts/Storage.cs"
 "Assets/Scripts/TestHints.cs"
+"Assets/Scripts/TestingSystem.cs"
 "Assets/Scripts/TestVoice.cs"
 "Assets/Scripts/ValveInteraction.cs"
 -langversion:9.0

@@ -16,6 +16,8 @@ public class Notebook : MonoBehaviour
     [SerializeField] private MicrophoneRecord microphoneRecord;
     [Space]
     [SerializeField] private Rigidbody rb;
+    [Space]
+    [SerializeField] private TestingSystem tsystem;
     private Interactable interactable;
     
     private string recognizedText = string.Empty;
@@ -122,6 +124,12 @@ public class Notebook : MonoBehaviour
     private void UpdateText() 
     {
         text.text = recognizedText;
+    }
+
+    public void SendRecognizedText()
+    {
+        Debug.Log("Текст отправлен на проверку.");
+        tsystem.AddNewInput(recognizedText);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -99,6 +99,10 @@
     {
       "name": "/actions/mixedreality",
       "usage": "single"
+    },
+    {
+      "name": "/actions/GasBallonInputSet",
+      "usage": "single"
     }
   ],
   "default_bindings": [

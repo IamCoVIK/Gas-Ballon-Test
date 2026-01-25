@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallonInteraction.cs" />
     <Compile Include="Assets\Scripts\ValveInteraction.cs" />
+    <Compile Include="Assets\Scripts\TestingSystem.cs" />
     <Compile Include="Assets\Scripts\DetachedReductorBehavior.cs" />
     <Compile Include="Assets\Scripts\Notebook.cs" />
     <Compile Include="Assets\Scripts\AttachedReductor.cs" />
