@@ -61,7 +61,7 @@ public class RulerInteraction : MonoBehaviour
         lineRenderer.endColor = rayColor;
         lineRenderer.enabled = false;
 
-        distanceText.text = "0.0";
+        distanceText.text = "0.0 m";
     }
 
     void Update()
@@ -82,7 +82,7 @@ public class RulerInteraction : MonoBehaviour
         }
 
         // Проверяем нажатие кнопки только на той руке, которая держит предмет
-        if (fireButton.GetState(inputSource))
+        if (fireButton.GetStateDown(inputSource))
         {
             StartFiring();
         }
@@ -100,6 +100,7 @@ public class RulerInteraction : MonoBehaviour
     // Метод для получения источника ввода от руки, которая держит предмет
     private SteamVR_Input_Sources GetHoldingHandInputSource()
     {
+        PickedUp();
         if (holdingHand != null)
         {
             return holdingHand.handType;

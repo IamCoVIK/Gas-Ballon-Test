@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Belt : MonoBehaviour
 {
-
-    private void Awake()
-    {   
-        Vector3 a = transform.localPosition;
-        a.Set(a.x, -0.5f, a.z);
-        transform.localPosition = a;
-    }
+    [SerializeField] private float Height;
+    [SerializeField] private Transform Head;
 
     void Update()
     {
-        transform.rotation.Normalize();
+        Vector3 currentPos = new Vector3(Head.position.x, Head.position.y - Height, Head.position.z);
+
+        transform.position = currentPos;
+        transform.rotation = Quaternion.Euler(0f, Head.rotation.eulerAngles.y, 0f);
     }
 }
