@@ -23,16 +23,21 @@ public class Notebook : MonoBehaviour
     private string recognizedText = string.Empty;
     private string _buffer;
 
-    private void Awake()
+    /*private void Awake()
     {
         whisper.OnNewSegment += OnNewSegment;
         whisper.OnProgress += OnProgressHandler;
 
         microphoneRecord.OnRecordStop += OnRecordStop;
-    }
+    }*/
 
     private void Start()
     {
+        whisper.OnNewSegment += OnNewSegment;
+        whisper.OnProgress += OnProgressHandler;
+
+        microphoneRecord.OnRecordStop += OnRecordStop;
+
         interactable = GetComponent<Interactable>();
     }
 
