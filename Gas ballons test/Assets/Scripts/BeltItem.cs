@@ -9,6 +9,7 @@ using Whisper.Utils;
 public class BeltItem : MonoBehaviour
 {
     [SerializeField] private GameObject ReferenceItem;
+    [SerializeField] private Transform startPoint;
     [SerializeField] private bool isReductor;
     private GameObject SpawnedItem;
 
@@ -30,6 +31,15 @@ public class BeltItem : MonoBehaviour
             }
             SpawnedItem = Instantiate(ReferenceItem);
             hand.AttachObject(SpawnedItem, GrabTypes.Grip);
+        }
+    }
+
+    public void ResetBeltItemPosition()
+    {
+        if (!isReductor)
+        {
+            ReferenceItem.transform.position = startPoint.position;
+            ReferenceItem.transform.rotation = startPoint.rotation;
         }
     }
 }

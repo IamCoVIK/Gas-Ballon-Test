@@ -1,11 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Belt : MonoBehaviour
 {
     [SerializeField] private float Height;
     [SerializeField] private Transform Head;
+
+    public UnityEvent OnResetBeltItems;
+
+    public void ResetBeltItems()
+    {
+        OnResetBeltItems.Invoke();
+    }
+
+    public void DeactivateBelt()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ActivateBelt()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void Start()
+    {
+        DeactivateBelt();
+    }
 
     void Update()
     {

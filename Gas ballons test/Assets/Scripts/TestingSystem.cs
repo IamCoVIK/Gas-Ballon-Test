@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestingSystem : MonoBehaviour
 {
     [SerializeField] private StorageParameters storage;
-
+    [SerializeField] private Belt belt;
     [SerializeField] private TMP_Text buttonText;
     private string startText = "Начать";
     private string endText = "Завершить";
@@ -44,6 +44,7 @@ public class TestingSystem : MonoBehaviour
         resultText.text = "Найденные ошибки:\n";
         VoiceInputs.Clear();
         walls.SetActive(false);
+        belt.ActivateBelt();
     }
 
     private void EndTest()
@@ -63,11 +64,26 @@ public class TestingSystem : MonoBehaviour
         TestStatus = 0;
         buttonText.text = startText;
         resultText.text = "Описание сути программы???\n";
+        ResetStorage();
         walls.SetActive(true);
+        belt.ResetBeltItems();
+        belt.DeactivateBelt();
+    }
+
+    private void ResetStorage()
+    {
+        storage.ResetAllPhysicObjs();
+    }
+
+    private void NewRandomStorage()
+    {
+
     }
 
     public void AddNewInput(string s)
     {
+        if (TestStatus != 1)
+            return;
         VoiceInputs.Add(s);
         resultText.text += "* " + s + '\n';
     }

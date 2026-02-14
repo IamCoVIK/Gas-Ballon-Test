@@ -81,6 +81,13 @@ public class StorageParameters : MonoBehaviour
     public IntParameter RadiatorDistance = new("–ассто€ние до радиаторов в дециметрах", 3, 15, 10);
     [SerializeField] private Transform radiators;
 
+    [SerializeField] private GameObject referenceMainDoors;
+    private GameObject mainDoors;
+    [SerializeField] private GameObject referenceBallonDoors;
+    private GameObject ballonDoors;
+    [SerializeField] private GameObject referenceBallons;
+    [SerializeField] private GameObject referenceReductors;
+
     /// <summary>
     /// Ќайти случайный свободный индекс в списке баллонов
     /// </summary>
@@ -192,6 +199,12 @@ public class StorageParameters : MonoBehaviour
         //GenerateVerticalBallons();
         //GenerateHorisontalBallons();
         RadiatorDistance.GetParameter();
+
+        SetTempScale();
+        RemoveVentsOrNot();
+        SetLightStatus();
+        SetSigns();
+        SetRadiators();
     }
 
     private void SetTempScale()
@@ -276,13 +289,43 @@ public class StorageParameters : MonoBehaviour
         Debug.Log($"{RadiatorDistance} - {RadiatorDistance.Value}");
     }
 
+    public void ResetAllPhysicObjs()
+    {
+        Destroy(mainDoors);
+        mainDoors = Instantiate(referenceMainDoors, referenceMainDoors.transform.parent);
+        referenceMainDoors.SetActive(false);
+        mainDoors.SetActive(true);
+
+        Destroy(ballonDoors);
+        ballonDoors = Instantiate(referenceBallonDoors, referenceBallonDoors.transform.parent);
+        referenceBallonDoors.SetActive(false);
+        ballonDoors.SetActive(true);
+
+        referenceBallons.SetActive(false);
+        foreach (GameObject ballon in GameObject.FindGameObjectsWithTag("Ballon"))
+        {
+            if (ballon.activeSelf)
+            {
+                Destroy(ballon);
+            }
+        }
+        Instantiate(referenceBallons, referenceBallons.transform.parent).SetActive(true);
+
+        referenceReductors.SetActive(false);
+        foreach (GameObject reductor in GameObject.FindGameObjectsWithTag("Reductor"))
+        {
+            if (reductor.activeSelf)
+            {
+                Destroy(reductor);
+            }
+        }
+        Instantiate(referenceReductors, referenceReductors.transform.parent).SetActive(true);
+    }
+
     private void Start()
     {
+        ResetAllPhysicObjs();
+
         GenerateStorageSituation();
-        SetTempScale();
-        RemoveVentsOrNot();
-        SetLightStatus();
-        SetSigns();
-        SetRadiators();
     }
 }

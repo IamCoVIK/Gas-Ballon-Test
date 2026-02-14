@@ -85,7 +85,7 @@ public class BallonValveInteraction : MonoBehaviour
 
             if (ballon.withReductor)
             {
-                arrow.transform.localRotation = Quaternion.Euler(new Vector3(arrowMinAngle, 0, 0));
+                arrow.transform.localRotation = Quaternion.Euler(new Vector3(arrowMinAngle * ballon.GasPressure, 0, 0));
             }
         }
         else
