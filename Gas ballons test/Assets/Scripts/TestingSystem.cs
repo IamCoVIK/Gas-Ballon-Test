@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Valve.VR;
 
 public class TestingSystem : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class TestingSystem : MonoBehaviour
         VoiceInputs.Clear();
         walls.SetActive(false);
         belt.ActivateBelt();
+        storage.GenerateStorageSituation();
     }
 
     private void EndTest()
@@ -54,7 +56,14 @@ public class TestingSystem : MonoBehaviour
         resultText.text = "Результаты:\n";
         foreach (string s in VoiceInputs)
         {
-            resultText.text += "* " + s + " - верно" + '\n';
+            if (storage.CheckVoiceInput(s))
+            {
+                resultText.text += "* " + s + " - верно" + '\n';
+            }
+            else
+            {
+                resultText.text += "* " + s + " - неверно" + '\n';
+            }
         }
         walls.SetActive(false);
     }
@@ -73,11 +82,6 @@ public class TestingSystem : MonoBehaviour
     private void ResetStorage()
     {
         storage.ResetAllPhysicObjs();
-    }
-
-    private void NewRandomStorage()
-    {
-
     }
 
     public void AddNewInput(string s)

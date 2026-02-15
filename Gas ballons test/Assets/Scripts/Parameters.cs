@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,6 +22,14 @@ public abstract class Parameter
     /// —оответствие значени€ требовани€м
     /// </summary>
     public bool IsWrong { get; set; }
+    /// <summary>
+    /// —лова, по которым определ€етс€ какой параметр упоминаетс€ в голосовой проверке
+    /// </summary>
+    public List<string> IdentifierKeyWords;
+    /// <summary>
+    /// —лова, по которым определ€етс€ упоминание неверности значени€ параметра в голосовой проверке
+    /// </summary>
+    public List<string> WrongValueKeyWords;
 
     /// <summary>
     /// ѕереключение случайной генерации параметра
@@ -28,6 +38,40 @@ public abstract class Parameter
     public bool ToggleRandom()
     {
         return IsRandom.Toggle();
+    }
+
+    /// <summary>
+    /// ѕроверка транскрипции голосового ввода на упонинание параметра
+    /// </summary>
+    /// <param name="text">“екстова€ транскрипци€ голосового ввода</param>
+    /// <returns>true - текст верно упоминает параметр и его значение</returns>
+    public bool TextCheck(string text)
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (char c in text)
+        {
+            if (!char.IsPunctuation(c))
+                sb.Append(c);
+        }
+        text = sb.ToString().ToLower();
+        string[] words = text.Split(' ');
+
+        bool id = false;
+        bool wrong = false;
+
+        foreach (string word in words)
+        {
+            if (IdentifierKeyWords.Contains(word))
+            {
+                id = true;
+            }
+            if (WrongValueKeyWords.Contains(word))
+            {
+                wrong = true;
+            }
+        }
+
+        return id & wrong;
     }
 
     public override string ToString()
@@ -94,12 +138,14 @@ public class IntParameter : Parameter
         else { return Value; }
     }
 
-    public IntParameter(string name, int minValueInclusive, int maxValueExclusive, int defaultValue)
+    public IntParameter(string name, int minValueInclusive, int maxValueExclusive, int defaultValue, List<string> idWords, List<string> wrongWords)
     {
         Name = name;
         MinValue = minValueInclusive;
         MaxValue = maxValueExclusive;
         DefalutValue = defaultValue;
+        IdentifierKeyWords = idWords;
+        WrongValueKeyWords = wrongWords;
     }
 }
 
@@ -159,9 +205,11 @@ public class BoolParameter : Parameter
         else { return Value; }
     }
 
-    public BoolParameter(string name, bool defaultValue)
+    public BoolParameter(string name, bool defaultValue, List<string> idWords, List<string> wrongWords)
     {
         Name = name;
         DefalutValue = defaultValue;
+        IdentifierKeyWords = idWords;
+        WrongValueKeyWords = wrongWords;
     }
 }

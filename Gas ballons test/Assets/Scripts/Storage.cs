@@ -9,40 +9,52 @@ using UnityEngine;
 /// </summary>
 public class StorageParameters : MonoBehaviour
 {
+    private static List<string> TemperatureIdWords = new List<string>() { 
+        "температура",
+    };
+    private static List<string> TemperatureWrongWords = new List<string>() {
+        "выше", "выше нормы", "превышает", "больше"
+    };
     /// <summary>
     /// Температура помещения в °C. Не должна превышать +35°C. Для охлаждения можно использовать полив полов водой и проветривание
     /// </summary>
-    public IntParameter Temperature = new("Температура помещения в °C", 15, 40, 33);
+    public IntParameter Temperature = new("Температура помещения в °C", 15, 40, 33, TemperatureIdWords, TemperatureWrongWords);
     [SerializeField] private Transform TempScale;
 
+    private static List<string> VentelationIdWords = new List<string>() {
+        "вентиляция", "вентиляции"
+    };
+    private static List<string> VentelationWrongWords = new List<string>() {
+        "отсутствует", "нет", "нету",
+    };
     /// <summary>
     /// Наличие вентиляции. Должна быть естественной или искусственной, особенно для взрывоопасных газов
     /// </summary>
-    public BoolParameter Ventelation = new("Наличие вентиляции", true);
+    public BoolParameter Ventelation = new("Наличие вентиляции", true, VentelationIdWords, VentelationWrongWords);
     [SerializeField] private GameObject Vents;
 
     /// <summary>
     /// Достаточность и исправность света по 5-балльной шкале, где 0 - света нет или он не работает, а 5 - свет исправен и достаточен
     /// </summary>
-    public IntParameter Light = new("Достаточность и исправность света", 0, 6, 4);
+    public IntParameter Light = new("Достаточность и исправность света", 0, 6, 4, new List<string>(), new List<string>());
     [SerializeField] private LightControl LightControl;
 
     /// <summary>
     /// Наличие знака безопасности, запрещающего вход посторонних
     /// </summary>
-    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних", true);
+    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних", true, new List<string>(), new List<string>());
     [SerializeField] private GameObject signTrespassing;
 
     /// <summary>
     /// Наличие знака безопасности, запрещающего курение
     /// </summary>
-    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение", true);
+    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение", true, new List<string>(), new List<string>());
     [SerializeField] private GameObject signNoSmoking;
 
     /// <summary>
     /// Наличие знака безопасности, запрещающего использование открытого огня
     /// </summary>
-    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня", true);
+    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня", true, new List<string>(), new List<string>());
     [SerializeField] private GameObject signNoFire;
 
     /// <summary>
@@ -53,12 +65,12 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие пустых баллонов в вертикальном хранилище
     /// </summary>
-    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище", false);
+    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище", false, new List<string>(), new List<string>());
 
     /// <summary>
     /// Хранение одновременно кислорода + ацетилен/пропан/водород или ацетилен + хлор или водород + фтор
     /// </summary>
-    public BoolParameter IsForbiddenGasMixes = new("Хранение одновременно кислорода + ацетилен/пропан/водород или ацетилен + хлор или водород + фтор", false);
+    public BoolParameter IsForbiddenGasMixes = new("Хранение одновременно кислорода + ацетилен/пропан/водород или ацетилен + хлор или водород + фтор", false, new List<string>(), new List<string>());
 
     /// <summary>
     /// Горизонтальное хранилище пустых баллонов
@@ -68,17 +80,17 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие полных баллонов в горизонтальном хранилище
     /// </summary>
-    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище", false);
+    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище", false, new List<string>(), new List<string>());
 
     /// <summary>
     /// Высота штабелей больше 1,5 м
     /// </summary>
-    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей больше 1,5 м", false);
+    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей больше 1,5 м", false, new List<string>(), new List<string>());
 
     /// <summary>
     /// Расстояние до радиаторов в дециметрах (должно быть более 1 м)
     /// </summary>
-    public IntParameter RadiatorDistance = new("Расстояние до радиаторов в дециметрах", 3, 15, 10);
+    public IntParameter RadiatorDistance = new("Расстояние до радиаторов в дециметрах", 3, 15, 10, new List<string>(), new List<string>());
     [SerializeField] private Transform radiators;
 
     [SerializeField] private GameObject referenceMainDoors;
@@ -320,6 +332,14 @@ public class StorageParameters : MonoBehaviour
             }
         }
         Instantiate(referenceReductors, referenceReductors.transform.parent).SetActive(true);
+    }
+
+    public bool CheckVoiceInput(string text)
+    {
+        return Temperature.TextCheck(text) ||
+            Ventelation.TextCheck(text);
+
+        //делать проверку по каждому параметку
     }
 
     private void Start()

@@ -127,7 +127,7 @@ public class Ballon : MonoBehaviour
         OTKMark.GetParameter();
         ValveLeaks.GetParameter();
         LeftPressure.GetParameter();*/
-        if (IsEmpty)
+        /*if (IsEmpty)
         {
             GasPressure = 0;
         }
@@ -135,10 +135,10 @@ public class Ballon : MonoBehaviour
         {
             GasPressure = 1; // ниже нормы
         }*/
-        else
+        /*else
         {
             GasPressure = 1; // норма
-        }
+        }*/
     }
 
     [SerializeField] private GameObject Reductor;

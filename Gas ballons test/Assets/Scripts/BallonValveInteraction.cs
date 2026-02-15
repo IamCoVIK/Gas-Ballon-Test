@@ -85,7 +85,7 @@ public class BallonValveInteraction : MonoBehaviour
 
             if (ballon.withReductor)
             {
-                arrow.transform.localRotation = Quaternion.Euler(new Vector3(arrowMinAngle * ballon.GasPressure, 0, 0));
+                arrow.transform.localRotation = Quaternion.Euler(new Vector3(arrowMinAngle, 0, 0));
             }
         }
         else
@@ -103,7 +103,8 @@ public class BallonValveInteraction : MonoBehaviour
             }
             else
             {
-                arrow.transform.localRotation = Quaternion.Euler(new Vector3((arrowMaxAngle - arrowMinAngle) * a + arrowMinAngle, 0, 0));
+                float ballon_pres = ballon.GasPressure / 20.27f;
+                arrow.transform.localRotation = Quaternion.Euler(new Vector3(((arrowMaxAngle - arrowMinAngle) * a * ballon_pres + arrowMinAngle), 0, 0));
             }
         }
     }
