@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -65,7 +64,7 @@ public abstract class Parameter
             {
                 id = true;
             }
-            if (WrongValueKeyWords.Contains(word))
+            if (WrongValueKeyWords.Contains(word) && IsWrong)
             {
                 wrong = true;
             }
@@ -90,9 +89,11 @@ public class IntParameter : Parameter
     /// </summary>
     public int Value { get; set; }
     
-    public int DefalutValue;
+    public int BorderValue;
     public int MinValue;
     public int MaxValue;
+
+    public bool Inversed = false;
 
     /// <summary>
     /// Установить значение параметра
@@ -119,13 +120,26 @@ public class IntParameter : Parameter
     /// <returns>Несоответствие требованиям</returns>
     public bool Check()
     {
-        if (Value >= DefalutValue)
+        if (Inversed)
         {
-            IsWrong = false;
-            return false;
+            if (Value >= BorderValue)
+            {
+                IsWrong = false;
+                return false;
+            }
+            IsWrong = true;
+            return true;
         }
-        IsWrong = true;
-        return true;
+        else
+        {
+            if (Value < BorderValue)
+            {
+                IsWrong = false;
+                return false;
+            }
+            IsWrong = true;
+            return true;
+        }
     }
 
     /// <summary>
@@ -138,12 +152,13 @@ public class IntParameter : Parameter
         else { return Value; }
     }
 
-    public IntParameter(string name, int minValueInclusive, int maxValueExclusive, int defaultValue, List<string> idWords, List<string> wrongWords)
+    public IntParameter(string name, int minValueInclusive, int maxValueExclusive, int borderValue, bool inversed, List<string> idWords, List<string> wrongWords)
     {
         Name = name;
         MinValue = minValueInclusive;
         MaxValue = maxValueExclusive;
-        DefalutValue = defaultValue;
+        BorderValue = borderValue;
+        Inversed = inversed;
         IdentifierKeyWords = idWords;
         WrongValueKeyWords = wrongWords;
     }

@@ -8,6 +8,7 @@ TagManager:
   - BallonConnector
   - Reductor
   - Ballon
+  - FireExt
   layers:
   - Default
   - TransparentFX

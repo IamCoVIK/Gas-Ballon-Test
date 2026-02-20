@@ -18,7 +18,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Температура помещения в °C. Не должна превышать +35°C. Для охлаждения можно использовать полив полов водой и проветривание
     /// </summary>
-    public IntParameter Temperature = new("Температура помещения в °C", 15, 40, 33, TemperatureIdWords, TemperatureWrongWords);
+    public IntParameter Temperature = new("Температура помещения в °C", 25, 40, 35, false, TemperatureIdWords, TemperatureWrongWords);
     [SerializeField] private Transform TempScale;
 
     private static List<string> VentelationIdWords = new List<string>() {
@@ -33,10 +33,16 @@ public class StorageParameters : MonoBehaviour
     public BoolParameter Ventelation = new("Наличие вентиляции", true, VentelationIdWords, VentelationWrongWords);
     [SerializeField] private GameObject Vents;
 
+    private static List<string> LightIdWords = new List<string>() {
+        "свет", "освещение"
+    };
+    private static List<string> LightWrongWords = new List<string>() {
+        "сломан", "сломано",
+    };
     /// <summary>
     /// Достаточность и исправность света по 5-балльной шкале, где 0 - света нет или он не работает, а 5 - свет исправен и достаточен
     /// </summary>
-    public IntParameter Light = new("Достаточность и исправность света", 0, 6, 4, new List<string>(), new List<string>());
+    public IntParameter Light = new("Достаточность и исправность света", 0, 6, 4, true, LightIdWords, LightWrongWords);
     [SerializeField] private LightControl LightControl;
 
     /// <summary>
@@ -87,10 +93,16 @@ public class StorageParameters : MonoBehaviour
     /// </summary>
     public BoolParameter IsHorisontalTooHigh = new("Высота штабелей больше 1,5 м", false, new List<string>(), new List<string>());
 
+    private static List<string> RadiatorDistanceIdWords = new List<string>() {
+        "батареи"
+    };
+    private static List<string> RadiatorDistanceWrongWords = new List<string>() {
+        "близко"
+    };
     /// <summary>
     /// Расстояние до радиаторов в дециметрах (должно быть более 1 м)
     /// </summary>
-    public IntParameter RadiatorDistance = new("Расстояние до радиаторов в дециметрах", 3, 15, 10, new List<string>(), new List<string>());
+    public IntParameter RadiatorDistance = new("Расстояние до радиаторов в дециметрах", 3, 15, 10, true, RadiatorDistanceIdWords, RadiatorDistanceWrongWords);
     [SerializeField] private Transform radiators;
 
     [SerializeField] private GameObject referenceMainDoors;
@@ -99,6 +111,8 @@ public class StorageParameters : MonoBehaviour
     private GameObject ballonDoors;
     [SerializeField] private GameObject referenceBallons;
     [SerializeField] private GameObject referenceReductors;
+    [SerializeField] private GameObject fireExt;
+    [SerializeField] private Transform fireExtStartPosition;
 
     /// <summary>
     /// Найти случайный свободный индекс в списке баллонов
@@ -221,11 +235,16 @@ public class StorageParameters : MonoBehaviour
 
     private void SetTempScale()
     {
-        int i = Temperature.Value - Temperature.MinValue;
-        float a = (-0.06064f - (-0.16334f)) / (Temperature.MaxValue - Temperature.MinValue) * i;
-        float b = (0.3431705f - 0.2404572f) / (Temperature.MaxValue - Temperature.MinValue) * i;
-        TempScale.localPosition = new Vector3(0, -0.16334f + a, -0.0054f);
-        TempScale.localScale = new Vector3(2.127844f, 0.2404572f + b, 0.1016777f);
+        // 40 locpos = -0.06064 locsca = 0.3431705
+        // 0 locpos = -0.22372 locsca = 0.180049
+        //int i = Temperature.Value - Temperature.MinValue;
+        //float a = (-0.06064f - (-0.16334f)) / (Temperature.MaxValue - Temperature.MinValue) * i;
+        //float b = (0.3431705f - 0.2404572f) / (Temperature.MaxValue - Temperature.MinValue) * i;
+        int i = Temperature.Value;
+        float a = (-0.06064f - (-0.22372f)) / Temperature.MaxValue * i;
+        float b = (0.3431705f - 0.180049f) / Temperature.MaxValue * i;
+        TempScale.localPosition = new Vector3(0, -0.22372f + a, -0.0054f);
+        TempScale.localScale = new Vector3(2.127844f, 0.180049f + b, 0.1016777f);
         if (Temperature.Check())
         {
             // Активация возможности проверки
@@ -332,14 +351,39 @@ public class StorageParameters : MonoBehaviour
             }
         }
         Instantiate(referenceReductors, referenceReductors.transform.parent).SetActive(true);
+
+        fireExt.transform.position = fireExtStartPosition.position;
+        fireExt.transform.rotation = fireExtStartPosition.rotation;
+
+        FillCheckList();
+    }
+
+
+    private List<Parameter> CheckList = new List<Parameter>();
+    
+    private void FillCheckList()
+    {
+        CheckList.Clear();
+        CheckList.Add(Temperature);
+        CheckList.Add(Ventelation);
+        CheckList.Add(RadiatorDistance);
+        CheckList.Add(Light);
+        // добавить все параметры
     }
 
     public bool CheckVoiceInput(string text)
     {
-        return Temperature.TextCheck(text) ||
-            Ventelation.TextCheck(text);
-
-        //делать проверку по каждому параметку
+        List<Parameter> checkedParams = new List<Parameter>();
+        bool result = false;
+        foreach (Parameter p in CheckList)
+        {
+            if (p.TextCheck(text) && !checkedParams.Contains(p))
+            {
+                checkedParams.Add(p);
+                result = true;
+            }
+        }
+        return result;
     }
 
     private void Start()
@@ -347,5 +391,7 @@ public class StorageParameters : MonoBehaviour
         ResetAllPhysicObjs();
 
         GenerateStorageSituation();
+
+        FillCheckList();
     }
 }
