@@ -58,7 +58,21 @@ public abstract class Parameter
         bool id = false;
         bool wrong = false;
 
-        foreach (string word in words)
+        foreach (string word in IdentifierKeyWords)
+        {
+            if (text.Contains(word))
+            {
+                id = true;
+            }
+        }
+        foreach (string word in WrongValueKeyWords)
+        {
+            if (text.Contains(word))
+            {
+                wrong = true;
+            }
+        }
+        /*foreach (string word in words)
         {
             if (IdentifierKeyWords.Contains(word))
             {
@@ -68,7 +82,7 @@ public abstract class Parameter
             {
                 wrong = true;
             }
-        }
+        }*/
 
         return id & wrong;
     }

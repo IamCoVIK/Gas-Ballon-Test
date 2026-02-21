@@ -10,10 +10,10 @@ using UnityEngine;
 public class StorageParameters : MonoBehaviour
 {
     private static List<string> TemperatureIdWords = new List<string>() { 
-        "температура",
+        "температура", "температуры", "температуре", "температуру", "температурой", "температурою",
     };
     private static List<string> TemperatureWrongWords = new List<string>() {
-        "выше", "выше нормы", "превышает", "больше"
+        "выше", "превышает", "больше"
     };
     /// <summary>
     /// Температура помещения в °C. Не должна превышать +35°C. Для охлаждения можно использовать полив полов водой и проветривание
@@ -34,10 +34,10 @@ public class StorageParameters : MonoBehaviour
     [SerializeField] private GameObject Vents;
 
     private static List<string> LightIdWords = new List<string>() {
-        "свет", "освещение"
+        "свет", "освещение", "света", "освещения"
     };
     private static List<string> LightWrongWords = new List<string>() {
-        "сломан", "сломано",
+        "сломан", "сломано", "не исправно", "не исправен", "не достаточен", "не достаточно", "недостаточно"
     };
     /// <summary>
     /// Достаточность и исправность света по 5-балльной шкале, где 0 - света нет или он не работает, а 5 - свет исправен и достаточен
@@ -45,59 +45,110 @@ public class StorageParameters : MonoBehaviour
     public IntParameter Light = new("Достаточность и исправность света", 0, 6, 4, true, LightIdWords, LightWrongWords);
     [SerializeField] private LightControl LightControl;
 
+    private static List<string> SignTrespassingIdWords = new List<string>() {
+        "знак вход воспрещён", "знак вход воспрещен", "знак посторонним вход воспрещён", "знак посторонним вход воспрещен",
+        "знака вход воспрещён", "знака вход воспрещен", "знака посторонним вход воспрещён", "знака посторонним вход воспрещен",
+    };
+    private static List<string> SignTrespassingWrongWords = new List<string>() {
+        "отсутствует", "нет", "нету",
+    };
     /// <summary>
     /// Наличие знака безопасности, запрещающего вход посторонних
     /// </summary>
-    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних", true, new List<string>(), new List<string>());
+    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних", true, SignTrespassingIdWords, SignTrespassingWrongWords);
     [SerializeField] private GameObject signTrespassing;
 
+    private static List<string> SignNoSmokingIdWords = new List<string>() {
+        "знак не курить", "знак нельзя курить", "знак курение запрещено", "знак запрещается курить",
+        "знака не курить", "знака нельзя курить", "знака курение запрещено", "знака запрещается курить",
+    };
+    private static List<string> SignNoSmokingWrongWords = new List<string>() {
+        "отсутствует", "нет", "нету",
+    };
     /// <summary>
     /// Наличие знака безопасности, запрещающего курение
     /// </summary>
-    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение", true, new List<string>(), new List<string>());
+    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение", true, SignNoSmokingIdWords, SignNoSmokingWrongWords);
     [SerializeField] private GameObject signNoSmoking;
 
+    private static List<string> SignNoFireIdWords = new List<string>() {
+        "знак запрещается использование открытого огня", "знак запрещающий использование открытого огня",
+        "знака запрещается использование открытого огня", "знака запрещающий использование открытого огня",
+    };
+    private static List<string> SignNoFireWrongWords = new List<string>() {
+        "отсутствует", "нет", "нету",
+    };
     /// <summary>
     /// Наличие знака безопасности, запрещающего использование открытого огня
     /// </summary>
-    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня", true, new List<string>(), new List<string>());
+    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня", true, SignNoFireIdWords, SignNoFireWrongWords);
     [SerializeField] private GameObject signNoFire;
+
+    private static List<string> FireExtPresenceIdWords = new List<string>() {
+        "огнетушитель", "огнетушителя",
+    };
+    private static List<string> FireExtPresenceWrongWords = new List<string>() {
+        "отсутствует", "нет", "нету",
+    };
+    /// <summary>
+    /// Наличие огнетушителя
+    /// </summary>
+    public BoolParameter FireExtPresence = new("Наличие огнетушителя", true, FireExtPresenceIdWords, FireExtPresenceWrongWords);
+    [SerializeField] private GameObject fireExtSign;
 
     /// <summary>
     /// Вертикальное хранилище полных баллонов
     /// </summary>
     public List<Ballon> VerticalBallons;
 
+    private static List<string> IsEmptyInVerticalIdWords = new List<string>() {
+        "хранилище полных баллонов", "хранилище наполненных баллонов",
+        "хранилище полных", "хранилище наполненных",
+        "среди полных", "среди наполненных",
+    };
+    private static List<string> IsEmptyInVerticalWrongWords = new List<string>() {
+        "пустые",
+    };
     /// <summary>
     /// Наличие пустых баллонов в вертикальном хранилище
     /// </summary>
-    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище", false, new List<string>(), new List<string>());
-
-    /// <summary>
-    /// Хранение одновременно кислорода + ацетилен/пропан/водород или ацетилен + хлор или водород + фтор
-    /// </summary>
-    public BoolParameter IsForbiddenGasMixes = new("Хранение одновременно кислорода + ацетилен/пропан/водород или ацетилен + хлор или водород + фтор", false, new List<string>(), new List<string>());
+    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище", false, IsEmptyInVerticalIdWords, IsEmptyInVerticalWrongWords);
 
     /// <summary>
     /// Горизонтальное хранилище пустых баллонов
     /// </summary>
     public List<Ballon> HorisontalBallons;
 
+    private static List<string> IsFullInHorisontalIdWords = new List<string>() {
+        "хранилище пустых баллонов",
+        "хранилище пустых",
+        "среди пустых", "среди пустых",
+    };
+    private static List<string> IsFullInHorisontalWrongWords = new List<string>() {
+        "полные", "наполненные",
+    };
     /// <summary>
     /// Наличие полных баллонов в горизонтальном хранилище
     /// </summary>
-    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище", false, new List<string>(), new List<string>());
+    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище", false, IsFullInHorisontalIdWords, IsFullInHorisontalWrongWords);
 
+    private static List<string> IsHorisontalTooHighIdWords = new List<string>() {
+        "штабель", "штабеля", "стелаж", "стелажа"
+    };
+    private static List<string> IsHorisontalTooHighWrongWords = new List<string>() {
+        "выше", "больше", "превышает",
+    };
     /// <summary>
     /// Высота штабелей больше 1,5 м
     /// </summary>
-    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей больше 1,5 м", false, new List<string>(), new List<string>());
+    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей больше 1,5 м", false, IsHorisontalTooHighIdWords, IsHorisontalTooHighWrongWords);
+    [SerializeField] private GameObject newBallonShelf;
 
     private static List<string> RadiatorDistanceIdWords = new List<string>() {
-        "батареи"
+        "батареи", "отопление", "отопления", "радиаторы", "радиатора"
     };
     private static List<string> RadiatorDistanceWrongWords = new List<string>() {
-        "близко"
+        "близко", "ближе", "близок", "близки", "рядом"
     };
     /// <summary>
     /// Расстояние до радиаторов в дециметрах (должно быть более 1 м)
@@ -130,84 +181,6 @@ public class StorageParameters : MonoBehaviour
     }
 
     /// <summary>
-    /// Случайное заполнение списка вертикально хранящихся баллонов
-    /// </summary>
-    private void GenerateVerticalBallons()
-    {
-        VerticalBallons = new();
-        List<int> occupied = new(); 
-        if (IsEmptyInVertical.Value)
-        {
-            int a = Random.Range(0, 12);
-            VerticalBallons[a] = new(Gases.Oxygen, true);
-            occupied.Add(a);
-        }
-        if (IsForbiddenGasMixes.Value)
-        {
-            int a = FindFreeIndex(occupied);
-            occupied.Add(a);
-            int b = FindFreeIndex(occupied);
-            occupied.Add(b);
-            switch (Random.Range(0, 3))
-            {
-                case 0:
-                    VerticalBallons[a] = new(Gases.Oxygen, false);
-                    switch (Random.Range(0, 3))
-                    {
-                        case 0:
-                            VerticalBallons[b] = new(Gases.Acetylene, false);
-                            break;
-                        case 1:
-                            VerticalBallons[b] = new(Gases.Propane, false);
-                            break;
-                        case 2:
-                            VerticalBallons[b] = new(Gases.Hydrogen, false);
-                            break;
-                    }
-                    break;
-                case 1:
-                    VerticalBallons[a] = new(Gases.Acetylene, false);
-                    VerticalBallons[b] = new(Gases.Chlorine, false);
-                    break;
-                case 2:
-                    VerticalBallons[a] = new(Gases.Hydrogen, false);
-                    VerticalBallons[b] = new(Gases.Fluorine, false);
-                    break;
-            }
-        }
-        for (int i = 0; i < 12; i++)
-        {
-            if (!occupied.Contains(i))
-            {
-                VerticalBallons.Add(new Ballon(Gases.Oxygen, false));
-            }
-        }
-    }
-
-    private void GenerateHorisontalBallons()
-    {
-        HorisontalBallons = new List<Ballon>();
-        int amount = 12;
-        int full = -1;
-        if (IsFullInHorisontal.Value)
-        {
-            full = Random.Range(0, 12);
-            HorisontalBallons[full] = new Ballon(Gases.Oxygen, false);
-        }
-        if (IsHorisontalTooHigh.Value)
-        {
-            amount = 16;
-        }
-        for (int i = 0; i < amount; i++)
-        {
-            if (i != full)
-            {
-                HorisontalBallons.Add(new Ballon(Gases.Oxygen, true));
-            }
-        }
-    }
-
-    /// <summary>
     /// Генерация состояния помещения для хранения баллонов
     /// </summary>
     public void GenerateStorageSituation()
@@ -218,10 +191,11 @@ public class StorageParameters : MonoBehaviour
         SignTrespassing.GetParameter();
         SignNoSmoking.GetParameter();
         SignNoFire.GetParameter();
-        //IsEmptyInVertical.GetParameter();
+        FireExtPresence.GetParameter();
+        IsEmptyInVertical.GetParameter();
         //IsForbiddenGasMixes.GetParameter();
-        //IsFullInHorisontal.GetParameter();
-        //IsHorisontalTooHigh.GetParameter();
+        IsFullInHorisontal.GetParameter();
+        IsHorisontalTooHigh.GetParameter();
         //GenerateVerticalBallons();
         //GenerateHorisontalBallons();
         RadiatorDistance.GetParameter();
@@ -230,6 +204,10 @@ public class StorageParameters : MonoBehaviour
         RemoveVentsOrNot();
         SetLightStatus();
         SetSigns();
+        SetFireExt();
+        SetEmptyInFull();
+        SetFullInEmpty();
+        SetHorisontalHeight();
         SetRadiators();
     }
 
@@ -310,6 +288,98 @@ public class StorageParameters : MonoBehaviour
         Debug.Log($"{SignNoFire} - {SignNoFire.Value}");
     }
 
+    private void SetFireExt()
+    {
+        if (FireExtPresence.Check())
+        {
+            fireExt.SetActive(false);
+            fireExtSign.SetActive(false);
+            // Активация возможности проверки
+        }
+        else
+        {
+            fireExt.SetActive(true);
+            fireExtSign.SetActive(true);
+        }
+        Debug.Log($"{FireExtPresence} - {FireExtPresence.Value}");
+    }
+
+    private void SetEmptyInFull()
+    {
+        if (IsEmptyInVertical.Check())
+        {
+            foreach (GameObject i in GameObject.FindGameObjectsWithTag("FullBallons"))
+            {
+                if (!i.activeSelf)
+                {
+                    continue;
+                }
+                Ballon[] bs = i.GetComponentsInChildren<Ballon>();
+                //int a = Random.Range(0, bs.Length);
+                for (int j = 0; j <= bs.Length / 2; j++)
+                {
+                    bs[j].IsEmpty = true;
+                    bs[j].GasPressure = 0.1f;
+                }
+            }
+            // Активация возможности проверки
+        }
+        else
+        {
+            
+        }
+        Debug.Log($"{IsEmptyInVertical} - {IsEmptyInVertical.Value}");
+    }
+
+    private void SetFullInEmpty()
+    {
+        if (IsFullInHorisontal.Check())
+        {
+            foreach (GameObject i in GameObject.FindGameObjectsWithTag("EmptyBallons"))
+            {
+                if (!i.activeSelf)
+                {
+                    continue;
+                }
+                Ballon[] bs = i.GetComponentsInChildren<Ballon>();
+                //int a = Random.Range(0, bs.Length);
+                for (int j = 0; j <= bs.Length / 2; j++)
+                {
+                    bs[j].IsEmpty = false;
+                    bs[j].GasPressure = 20f;
+                }
+            }
+            // Активация возможности проверки
+        }
+        else
+        {
+
+        }
+        Debug.Log($"{IsFullInHorisontal} - {IsFullInHorisontal.Value}");
+    }
+
+    private void SetHorisontalHeight()
+    {
+        if (IsHorisontalTooHigh.Check())
+        {
+            newBallonShelf.SetActive(true);
+            foreach (GameObject i in GameObject.FindGameObjectsWithTag("EmptyBallons"))
+            {
+                i.transform.localPosition = new Vector3(0, 0.365f, 0);
+            }
+            // Активация возможности проверки
+        }
+        else
+        {
+            newBallonShelf.SetActive(false);
+            foreach (GameObject i in GameObject.FindGameObjectsWithTag("EmptyBallons"))
+            {
+                i.transform.localPosition = new Vector3(0, 0, 0);
+            }
+        }
+        Debug.Log($"{IsHorisontalTooHigh} - {IsHorisontalTooHigh.Value}");
+    }
+
     private void SetRadiators()
     {
         radiators.localPosition = new Vector3(((float)RadiatorDistance.Value / 10) - 1, 0, 0);
@@ -366,9 +436,15 @@ public class StorageParameters : MonoBehaviour
         CheckList.Clear();
         CheckList.Add(Temperature);
         CheckList.Add(Ventelation);
-        CheckList.Add(RadiatorDistance);
         CheckList.Add(Light);
-        // добавить все параметры
+        CheckList.Add(SignTrespassing);
+        CheckList.Add(SignNoSmoking);
+        CheckList.Add(SignNoFire);
+        CheckList.Add(FireExtPresence);
+        CheckList.Add(IsEmptyInVertical);
+        CheckList.Add(IsFullInHorisontal);
+        CheckList.Add(IsHorisontalTooHigh);
+        CheckList.Add(RadiatorDistance);
     }
 
     public bool CheckVoiceInput(string text)
