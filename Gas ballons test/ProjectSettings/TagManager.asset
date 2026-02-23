@@ -11,6 +11,7 @@ TagManager:
   - FireExt
   - EmptyBallons
   - FullBallons
+  - TestingSystem
   layers:
   - Default
   - TransparentFX

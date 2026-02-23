@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -13,6 +12,10 @@ public abstract class Parameter
     /// Название параметра
     /// </summary>
     public string Name { get; set; }
+    /// <summary>
+    /// Описание параметра
+    /// </summary>
+    public string Description { get; set; }
     /// <summary>
     /// Включена ли случайная генерация значения параметра
     /// </summary>
@@ -166,9 +169,10 @@ public class IntParameter : Parameter
         else { return Value; }
     }
 
-    public IntParameter(string name, int minValueInclusive, int maxValueExclusive, int borderValue, bool inversed, List<string> idWords, List<string> wrongWords)
+    public IntParameter(string name, string description, int minValueInclusive, int maxValueExclusive, int borderValue, bool inversed, List<string> idWords, List<string> wrongWords)
     {
         Name = name;
+        Description = description;
         MinValue = minValueInclusive;
         MaxValue = maxValueExclusive;
         BorderValue = borderValue;
@@ -234,9 +238,10 @@ public class BoolParameter : Parameter
         else { return Value; }
     }
 
-    public BoolParameter(string name, bool defaultValue, List<string> idWords, List<string> wrongWords)
+    public BoolParameter(string name, string description, bool defaultValue, List<string> idWords, List<string> wrongWords)
     {
         Name = name;
+        Description = description;
         DefalutValue = defaultValue;
         IdentifierKeyWords = idWords;
         WrongValueKeyWords = wrongWords;

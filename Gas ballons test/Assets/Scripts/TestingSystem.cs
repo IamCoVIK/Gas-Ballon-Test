@@ -15,7 +15,11 @@ public class TestingSystem : MonoBehaviour
     [SerializeField] private TMP_Text resultText;
     private List<string> VoiceInputs = new List<string>();
 
+    [SerializeField] private TMP_Text missedText;
+
     [SerializeField] private GameObject walls;
+
+    [SerializeField] private AudioSource failSound;
 
     public int TestStatus = 0;
     // 0 - Сброс состояния команты
@@ -65,6 +69,12 @@ public class TestingSystem : MonoBehaviour
                 resultText.text += "* " + s + " - неверно" + '\n';
             }
         }
+        List<string> missed = storage.MissedParams();
+        missedText.text = "Пропущенные ошибки:\n";
+        foreach (string s in missed)
+        {
+            missedText.text += "* " + s + '\n';
+        }
         walls.SetActive(false);
     }
 
@@ -72,7 +82,8 @@ public class TestingSystem : MonoBehaviour
     {
         TestStatus = 0;
         buttonText.text = startText;
-        resultText.text = "Описание сути программы???\n";
+        resultText.text = "Обучение условиям хранения газовых баллонов в интерактивной форме\n";
+        missedText.text = "";
         ResetStorage();
         walls.SetActive(true);
         belt.ResetBeltItems();
@@ -82,6 +93,16 @@ public class TestingSystem : MonoBehaviour
     private void ResetStorage()
     {
         storage.ResetAllPhysicObjs();
+    }
+
+    public void FailedTest()
+    {
+        TestStatus = 2;
+        buttonText.text = resetText;
+        resultText.text = "Вы нарушили технику безопасности!";
+        walls.SetActive(false);
+
+        failSound.Play();
     }
 
     public void AddNewInput(string s)
@@ -95,7 +116,7 @@ public class TestingSystem : MonoBehaviour
     private void Start()
     {
         buttonText.text = startText;
-        resultText.text = "Описание сути программы???";
+        resultText.text = "Обучение условиям хранения газовых баллонов в интерактивной форме\n";
         walls.SetActive(true);
     }
 }

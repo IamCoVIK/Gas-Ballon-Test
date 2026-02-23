@@ -79,6 +79,10 @@ public class LightControl : MonoBehaviour
         {
             light.intensity = 0.8f;
         }
+        foreach (GameObject light in Bulbs)
+        {
+            light.SetActive(true);
+        }
     }
 
     private void Status5()

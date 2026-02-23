@@ -11,6 +11,8 @@ public class BallonExplosion : MonoBehaviour
     {
         Instantiate(explosion, ballon.transform.position, ballon.transform.rotation);
 
+        GameObject.FindWithTag("TestingSystem").GetComponent<TestingSystem>().FailedTest();
+
         Destroy(ballon);
     }
 }
