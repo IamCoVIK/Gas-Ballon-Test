@@ -14,6 +14,12 @@ public class TestingSystem : MonoBehaviour
 
     [SerializeField] private TMP_Text resultText;
     private List<string> VoiceInputs = new List<string>();
+    private string aboutText =
+        "Обучение условиям хранения газовых баллонов в интерактивной форме\n\n" +
+        "1) Нажмите кнопку ниже, чтобы начать\n" +
+        "2) Изучите представленное помещение на предмет нарушений условий хранения баллонов\n" +
+        "3) Занесите найденные нарушения в блокнот с помощью голосового ввода\n" +
+        "4) Нажмите на кнопку еще раз, чтобы узнать результаты проверки\n";
 
     [SerializeField] private TMP_Text missedText;
 
@@ -71,6 +77,10 @@ public class TestingSystem : MonoBehaviour
         }
         List<string> missed = storage.MissedParams();
         missedText.text = "Пропущенные ошибки:\n";
+        if (missed.Count == 0)
+        {
+            missedText.text += "Все верно!\n";
+        }
         foreach (string s in missed)
         {
             missedText.text += "* " + s + '\n';
@@ -82,7 +92,7 @@ public class TestingSystem : MonoBehaviour
     {
         TestStatus = 0;
         buttonText.text = startText;
-        resultText.text = "Обучение условиям хранения газовых баллонов в интерактивной форме\n";
+        resultText.text = aboutText;
         missedText.text = "";
         ResetStorage();
         walls.SetActive(true);
@@ -116,7 +126,7 @@ public class TestingSystem : MonoBehaviour
     private void Start()
     {
         buttonText.text = startText;
-        resultText.text = "Обучение условиям хранения газовых баллонов в интерактивной форме\n";
+        resultText.text = aboutText;
         walls.SetActive(true);
     }
 }
