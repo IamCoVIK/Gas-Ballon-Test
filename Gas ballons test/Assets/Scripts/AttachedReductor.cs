@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
@@ -13,7 +11,7 @@ public class AttachedReductor : MonoBehaviour
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Boolean grabAction;
 
-    public Animator animator;
+    //public Animator animator;
 
     private void Start()
     {
@@ -30,7 +28,7 @@ public class AttachedReductor : MonoBehaviour
         }
     }
 
-    public void ArrowUp(float pressure)
+    /*public void ArrowUp(float pressure)
     {
         animator.speed = 1f;
         animator.SetTrigger("BallonValveToggle");
@@ -46,5 +44,5 @@ public class AttachedReductor : MonoBehaviour
     private void StopAnimation()
     {
         animator.speed = 0f;
-    }
+    }*/
 }

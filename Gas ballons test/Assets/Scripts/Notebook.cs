@@ -133,8 +133,9 @@ public class Notebook : MonoBehaviour
 
     public void SendRecognizedText()
     {
-        Debug.Log("Текст отправлен на проверку.");
         tsystem.AddNewInput(recognizedText);
+        text.text = "";
+        Debug.Log("Текст отправлен на проверку.");
     }
 
     private void OnCollisionEnter(Collision collision)

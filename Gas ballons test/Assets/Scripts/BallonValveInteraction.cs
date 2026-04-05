@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using Valve.VR;
@@ -14,7 +11,7 @@ public class BallonValveInteraction : MonoBehaviour
     private Interactable interactable;
     private CircularDrive circularDrive;
 
-    public Animator valveAnimator;
+    //public Animator valveAnimator;
     public AudioSource valveSpinSound;
     public AudioSource valveLeakSound;
 
@@ -39,7 +36,7 @@ public class BallonValveInteraction : MonoBehaviour
     public bool isOpen = false;
     private float maxVolume;
     private Ballon ballon;
-    public AttachedReductor attachedReductor;
+    //public AttachedReductor attachedReductor;
 
     public GameObject arrow;
     public float arrowMinAngle;
@@ -109,7 +106,7 @@ public class BallonValveInteraction : MonoBehaviour
         }
     }
 
-    void ToggleValve()
+    /*void ToggleValve()
     {
         if (isOpen)
         {
@@ -141,7 +138,7 @@ public class BallonValveInteraction : MonoBehaviour
     void AnimateValve(string anim)
     {
         valveAnimator.SetTrigger(anim);
-    }
+    }*/
 
     public void PlayLeakSound()
     {

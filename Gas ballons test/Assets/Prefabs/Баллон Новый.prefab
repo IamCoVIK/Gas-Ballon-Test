@@ -1312,13 +1312,11 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  valveAnimator: {fileID: 8100407014314956740}
   valveSpinSound: {fileID: 3180652495454709146}
   valveLeakSound: {fileID: 677063978659598672}
-  explosionTime: 5
+  explosionTime: 10
   isOpen: 0
-  attachedReductor: {fileID: 7428317349748022290}
-  arrow: {fileID: 3855293680692651920}
+  arrow: {fileID: 6785976401627552878}
   arrowMinAngle: -46.943
   arrowMaxAngle: 225
   Explosion:
@@ -2700,7 +2698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1131887064328080939
 Transform:
   m_ObjectHideFlags: 0
@@ -2787,7 +2785,6 @@ MonoBehaviour:
   grabAction:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
-  animator: {fileID: 4147734866169439467}
 --- !u!95 &4147734866169439467
 Animator:
   serializedVersion: 5
@@ -3691,6 +3688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1414723094310192352}
+  - {fileID: 1732352919515812458}
   - {fileID: 1131887064328080939}
   - {fileID: 4165623125522057708}
   - {fileID: 6525317961329541853}
@@ -3848,7 +3846,7 @@ MonoBehaviour:
   GasType: 0
   IsEmpty: 1
   GasPressure: 0
-  Reductor: {fileID: 6481853641056148563}
+  Reductor: {fileID: 6555602439585166010}
   withReductor: 0
   ballonValveInteraction: {fileID: 8712938688066678407}
   attachSound: {fileID: 4316245618023555813}
@@ -4020,3 +4018,112 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1001 &8907574509249109480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4624434759059095593}
+    m_Modifications:
+    - target: {fileID: 2406086025185488722, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_Name
+      value: "\u041A\u0438\u0441\u043B\u043E\u0440\u043E\u0434\u043D\u044B\u0439
+        \u0440\u0435\u0434\u0443\u043A\u0442\u043E\u0440 \u041D\u043E\u0432\u044B\u0439"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306937576187867260, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350820879063473769, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: objectType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350820879063473769, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: hints.Array.data[0]
+      value: "\u041E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9987
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0836
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4106751387431913921, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+    - {fileID: 48353625212455783, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+    - {fileID: 7273011353654455425, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2406086025185488722, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6546623281870055499}
+  m_SourcePrefab: {fileID: 100100000, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+--- !u!4 &1732352919515812458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7175503176689766274, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+  m_PrefabInstance: {fileID: 8907574509249109480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6555602439585166010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2406086025185488722, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+  m_PrefabInstance: {fileID: 8907574509249109480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6546623281870055499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555602439585166010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f02ba36bead9c4b996543d285654fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballon: {fileID: 4190656313932100053}
+  detachedReductor: {fileID: 2406086025185488722, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+  handType: 0
+  grabAction:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+--- !u!1 &6785976401627552878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2716425145411404166, guid: eed20c90760b5a04a9282d75ed864253, type: 3}
+  m_PrefabInstance: {fileID: 8907574509249109480}
+  m_PrefabAsset: {fileID: 0}

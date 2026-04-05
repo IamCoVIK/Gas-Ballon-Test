@@ -15,7 +15,7 @@ public class BallonPhysics : MonoBehaviour
         if (rb.velocity.magnitude > 1f)
         {
             hitSound.Play();
-            if (rb.velocity.magnitude > 3f)
+            if (rb.velocity.magnitude > 10f)
             {
                 hardHit.Invoke();
             }

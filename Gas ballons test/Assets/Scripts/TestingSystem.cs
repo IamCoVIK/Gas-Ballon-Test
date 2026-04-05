@@ -7,6 +7,7 @@ public class TestingSystem : MonoBehaviour
 {
     [SerializeField] private StorageParameters storage;
     [SerializeField] private Belt belt;
+    [SerializeField] private HandPockets handPockets;
     [SerializeField] private TMP_Text buttonText;
     private string startText = "Начать";
     private string endText = "Завершить";
@@ -17,15 +18,18 @@ public class TestingSystem : MonoBehaviour
     private string aboutText =
         "Обучение условиям хранения газовых баллонов в интерактивной форме\n\n" +
         "1) Нажмите кнопку ниже, чтобы начать\n" +
-        "2) Изучите представленное помещение на предмет нарушений условий хранения баллонов\n" +
+        "2) Осмотрите представленное помещение на предмет нарушений условий хранения баллонов\n" +
         "3) Занесите найденные нарушения в блокнот с помощью голосового ввода\n" +
-        "4) Нажмите на кнопку еще раз, чтобы узнать результаты проверки\n";
+        "4) Нажмите на кнопку еще раз, чтобы узнать результаты проверки\n" +
+        "\nИзмеритель расстояния и блокнот можно взять из карманов на руках или в самом помещении";
 
     [SerializeField] private TMP_Text missedText;
 
     [SerializeField] private GameObject walls;
 
     [SerializeField] private AudioSource failSound;
+
+    public bool useBelt;
 
     public int TestStatus = 0;
     // 0 - Сброс состояния команты
@@ -55,7 +59,14 @@ public class TestingSystem : MonoBehaviour
         resultText.text = "Найденные ошибки:\n";
         VoiceInputs.Clear();
         walls.SetActive(false);
-        belt.ActivateBelt();
+        if (useBelt)
+        {
+            belt.ActivateBelt();
+        }
+        else
+        {
+            handPockets.ActivateHandPockets();
+        }
         storage.GenerateStorageSituation();
     }
 
@@ -96,8 +107,16 @@ public class TestingSystem : MonoBehaviour
         missedText.text = "";
         ResetStorage();
         walls.SetActive(true);
-        belt.ResetBeltItems();
-        belt.DeactivateBelt();
+        if (useBelt)
+        {
+            belt.ResetBeltItems();
+            belt.DeactivateBelt();
+        }
+        else
+        {
+            handPockets.ResetHandPocketItems();
+            handPockets.DeactivateHandPockets();
+        }
     }
 
     private void ResetStorage()

@@ -63,7 +63,9 @@
     <Compile Include="Assets\Scripts\BallonInteraction.cs" />
     <Compile Include="Assets\Scripts\ValveInteraction.cs" />
     <Compile Include="Assets\Scripts\BeltItem.cs" />
+    <Compile Include="Assets\Scripts\HandPockets.cs" />
     <Compile Include="Assets\Scripts\TestingSystem.cs" />
+    <Compile Include="Assets\Scripts\HandPocketItem.cs" />
     <Compile Include="Assets\Scripts\DetachedReductorBehavior.cs" />
     <Compile Include="Assets\Scripts\Notebook.cs" />
     <Compile Include="Assets\Scripts\AttachedReductor.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\Scripts\FireExt.cs" />
     <Compile Include="Assets\Samples\Whisper\2 - Microphone\MicrophoneDemo.cs" />
     <Compile Include="Assets\Scripts\TestVoice.cs" />
+    <Compile Include="Assets\Scripts\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\BallonExplosion.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction.cs" />
     <Compile Include="Assets\Scripts\Ballon.cs" />

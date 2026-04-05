@@ -159,6 +159,7 @@ public class StorageParameters : MonoBehaviour
         "Должна быть меньше 1,5 м", 
         false, IsHorisontalTooHighIdWords, IsHorisontalTooHighWrongWords);
     [SerializeField] private GameObject newBallonShelf;
+    [SerializeField] private GameObject additionalFakeBallons;
 
     private static List<string> RadiatorDistanceIdWords = new List<string>() {
         "батареи", "батарея", "отопление", "отопления", "радиаторы", "радиатора",
@@ -334,12 +335,14 @@ public class StorageParameters : MonoBehaviour
                 {
                     continue;
                 }
-                //int a = Random.Range(0, bs.Length);
-                for (int j = 0; j <= bs.Length / 2; j++)
+                int a = Random.Range(0, bs.Length);
+                bs[a].IsEmpty = true;
+                bs[a].GasPressure = 0.1f;
+                /*for (int j = 0; j <= bs.Length / 2; j++)
                 {
                     bs[j].IsEmpty = true;
                     bs[j].GasPressure = 0.1f;
-                }
+                }*/
             }
             // Активация возможности проверки
         }
@@ -365,12 +368,9 @@ public class StorageParameters : MonoBehaviour
                 {
                     continue;
                 }
-                //int a = Random.Range(0, bs.Length);
-                for (int j = 0; j <= bs.Length / 2; j++)
-                {
-                    bs[j].IsEmpty = false;
-                    bs[j].GasPressure = 20f;
-                }
+                int a = Random.Range(0, bs.Length);
+                bs[a].IsEmpty = false;
+                bs[a].GasPressure = 20f;
             }
             // Активация возможности проверки
         }
@@ -390,15 +390,17 @@ public class StorageParameters : MonoBehaviour
             {
                 i.transform.localPosition = new Vector3(0, 0.365f, 0);
             }
+            additionalFakeBallons.SetActive(true);
             // Активация возможности проверки
         }
         else
         {
-            newBallonShelf.SetActive(false);
+            additionalFakeBallons.SetActive(false);
             foreach (GameObject i in GameObject.FindGameObjectsWithTag("EmptyBallons"))
             {
                 i.transform.localPosition = new Vector3(0, 0, 0);
             }
+            newBallonShelf.SetActive(false);
         }
         Debug.Log($"{IsHorisontalTooHigh} - {IsHorisontalTooHigh.Value}");
     }
@@ -415,6 +417,8 @@ public class StorageParameters : MonoBehaviour
 
     public void ResetAllPhysicObjs()
     {
+        additionalFakeBallons.SetActive(false);
+
         Destroy(mainDoors);
         mainDoors = Instantiate(referenceMainDoors, referenceMainDoors.transform.parent);
         referenceMainDoors.SetActive(false);
