@@ -385,6 +385,7 @@
 "Assets/Scripts/DetachedReductorBehavior.cs"
 "Assets/Scripts/DoorInteraction.cs"
 "Assets/Scripts/FireExt.cs"
+"Assets/Scripts/HandLaser.cs"
 "Assets/Scripts/HandPocketItem.cs"
 "Assets/Scripts/HandPockets.cs"
 "Assets/Scripts/InteractiveDoor.cs"
@@ -400,6 +401,7 @@
 "Assets/Scripts/TestingSystem.cs"
 "Assets/Scripts/TestVoice.cs"
 "Assets/Scripts/ValveInteraction.cs"
+"Assets/Scripts/WallNotebook.cs"
 -langversion:9.0
 /deterministic
 /optimize+

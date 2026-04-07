@@ -5,6 +5,7 @@ using Valve.VR.InteractionSystem;
 public class HandPocketItem : MonoBehaviour
 {
     [SerializeField] private GameObject ReferenceItem;
+    [SerializeField] private Transform ReferenceItemOffset;
     [SerializeField] private GameObject ItemVisualisation;
     [SerializeField] private Transform startPoint;
     [SerializeField] private Hand handP;
@@ -17,7 +18,7 @@ public class HandPocketItem : MonoBehaviour
     {
         if (grabAction.GetStateDown(hand.handType))
         {
-            hand.AttachObject(ReferenceItem, GrabTypes.Grip);
+            hand.AttachObject(ReferenceItem, GrabTypes.Grip, attachmentOffset: ReferenceItemOffset);
         }
     }
 

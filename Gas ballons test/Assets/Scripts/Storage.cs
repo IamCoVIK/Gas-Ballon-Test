@@ -18,7 +18,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Температура помещения в °C. Не должна превышать +35°C. Для охлаждения можно использовать полив полов водой и проветривание
     /// </summary>
-    public IntParameter Temperature = new("Температура помещения в °C",
+    public IntParameter Temperature = new("Температура помещения в °C.",
         "Не должна превышать +35°C.",
         25, 40, 35, false, TemperatureIdWords, TemperatureWrongWords);
     [SerializeField] private Transform TempScale;
@@ -32,8 +32,8 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие вентиляции. Должна быть естественной или искусственной, особенно для взрывоопасных газов
     /// </summary>
-    public BoolParameter Ventelation = new("Наличие вентиляции",
-        "Должна быть естественной или искусственной, особенно для взрывоопасных газов",
+    public BoolParameter Ventelation = new("Наличие вентиляции.",
+        "Должна быть естественной или искусственной, особенно для взрывоопасных газов.",
         true, VentelationIdWords, VentelationWrongWords);
     [SerializeField] private GameObject Vents;
 
@@ -46,7 +46,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Достаточность и исправность света по 5-балльной шкале, где 0 - света нет или он не работает, а 5 - свет исправен и достаточен
     /// </summary>
-    public IntParameter Light = new("Достаточность и исправность света", 
+    public IntParameter Light = new("Достаточность и исправность света.", 
         "",
         0, 6, 4, true, LightIdWords, LightWrongWords);
     [SerializeField] private LightControl LightControl;
@@ -67,7 +67,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие знака безопасности, запрещающего вход посторонних
     /// </summary>
-    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних", "", true, SignTrespassingIdWords, SignTrespassingWrongWords);
+    public BoolParameter SignTrespassing = new("Наличие знака безопасности, запрещающего вход посторонних.", "", true, SignTrespassingIdWords, SignTrespassingWrongWords);
     [SerializeField] private GameObject signTrespassing;
 
     private static List<string> SignNoSmokingIdWords = new List<string>() {
@@ -80,7 +80,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие знака безопасности, запрещающего курение
     /// </summary>
-    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение", "", true, SignNoSmokingIdWords, SignNoSmokingWrongWords);
+    public BoolParameter SignNoSmoking = new ("Наличие знака безопасности, запрещающего курение.", "", true, SignNoSmokingIdWords, SignNoSmokingWrongWords);
     [SerializeField] private GameObject signNoSmoking;
 
     private static List<string> SignNoFireIdWords = new List<string>() {
@@ -99,7 +99,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие знака безопасности, запрещающего использование открытого огня
     /// </summary>
-    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня", "", true, SignNoFireIdWords, SignNoFireWrongWords);
+    public BoolParameter SignNoFire = new("Наличие знака безопасности, запрещающего использование открытого огня.", "", true, SignNoFireIdWords, SignNoFireWrongWords);
     [SerializeField] private GameObject signNoFire;
 
     private static List<string> FireExtPresenceIdWords = new List<string>() {
@@ -113,7 +113,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие огнетушителя
     /// </summary>
-    public BoolParameter FireExtPresence = new("Наличие огнетушителя", "", true, FireExtPresenceIdWords, FireExtPresenceWrongWords);
+    public BoolParameter FireExtPresence = new("Наличие огнетушителя.", "", true, FireExtPresenceIdWords, FireExtPresenceWrongWords);
     [SerializeField] private GameObject fireExtSign;
 
     private static List<string> IsEmptyInVerticalIdWords = new List<string>() {
@@ -127,7 +127,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие пустых баллонов в вертикальном хранилище
     /// </summary>
-    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище", 
+    public BoolParameter IsEmptyInVertical = new("Наличие пустых баллонов в вертикальном хранилище.", 
         "Пустые баллоны должны находиться в соответствующем хранилище", 
         false, IsEmptyInVerticalIdWords, IsEmptyInVerticalWrongWords);
 
@@ -142,7 +142,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Наличие полных баллонов в горизонтальном хранилище
     /// </summary>
-    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище",
+    public BoolParameter IsFullInHorisontal = new("Наличие полных баллонов в горизонтальном хранилище.",
         "Полные баллоны должны находиться в соответствующем хранилище", 
         false, IsFullInHorisontalIdWords, IsFullInHorisontalWrongWords);
 
@@ -155,7 +155,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Высота штабелей. Должна быть меньше 1,5 м
     /// </summary>
-    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей", 
+    public BoolParameter IsHorisontalTooHigh = new("Высота штабелей.", 
         "Должна быть меньше 1,5 м", 
         false, IsHorisontalTooHighIdWords, IsHorisontalTooHighWrongWords);
     [SerializeField] private GameObject newBallonShelf;
@@ -170,7 +170,7 @@ public class StorageParameters : MonoBehaviour
     /// <summary>
     /// Расстояние до радиаторов в дециметрах (должно быть более 1 м)
     /// </summary>
-    public IntParameter RadiatorDistance = new("Расстояние до радиаторов в дециметрах", 
+    public IntParameter RadiatorDistance = new("Расстояние до радиаторов.", 
         "Должно быть более 1 м", 
         3, 15, 10, true, RadiatorDistanceIdWords, RadiatorDistanceWrongWords);
     [SerializeField] private Transform radiators;
@@ -502,7 +502,10 @@ public class StorageParameters : MonoBehaviour
         {
             if (!CheckedList.Contains(p) && p.IsWrong)
             {
-                result.Add($"{p.Name} {p.Description}");
+                if (p.Description == "")
+                    result.Add($"{p.Name}");
+                else
+                    result.Add($"{p.Name}\n{p.Description}");
             }
         }
         return result;

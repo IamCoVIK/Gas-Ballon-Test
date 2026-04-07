@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 using Whisper;
@@ -23,13 +24,9 @@ public class Notebook : MonoBehaviour
     private string recognizedText = string.Empty;
     private string _buffer;
 
-    /*private void Awake()
-    {
-        whisper.OnNewSegment += OnNewSegment;
-        whisper.OnProgress += OnProgressHandler;
+    public bool blockUpdate = false;
 
-        microphoneRecord.OnRecordStop += OnRecordStop;
-    }*/
+    public UnityEvent onTextRecognized;
 
     private void Start()
     {
@@ -43,6 +40,8 @@ public class Notebook : MonoBehaviour
 
     void Update()
     {
+        if (blockUpdate) return;
+
         if (recordButton == null) return;
 
         Hand holdingHand = interactable.attachedToHand;
@@ -75,7 +74,7 @@ public class Notebook : MonoBehaviour
         }
     }
 
-    private void StartRecording() 
+    public void StartRecording() 
     {
         if (!microphoneRecord.IsRecording)
         {
@@ -84,7 +83,7 @@ public class Notebook : MonoBehaviour
         }
     }
 
-    private void StopRecording() 
+    public void StopRecording() 
     {
         if (microphoneRecord.IsRecording)
         {
@@ -129,6 +128,12 @@ public class Notebook : MonoBehaviour
     private void UpdateText() 
     {
         text.text = recognizedText;
+        onTextRecognized.Invoke();
+    }
+
+    public string GetText()
+    {
+        return text.text;
     }
 
     public void SendRecognizedText()

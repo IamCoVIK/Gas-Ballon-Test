@@ -75,6 +75,8 @@
     <Compile Include="Assets\Scripts\Reductor.cs" />
     <Compile Include="Assets\Scripts\Storage.cs" />
     <Compile Include="Assets\Scripts\ReductorInteraction.cs" />
+    <Compile Include="Assets\Scripts\WallNotebook.cs" />
+    <Compile Include="Assets\Scripts\HandLaser.cs" />
     <Compile Include="Assets\Scripts\RulerInteraction.cs" />
     <Compile Include="Assets\Scripts\LightControl.cs" />
     <Compile Include="Assets\Scripts\Belt.cs" />

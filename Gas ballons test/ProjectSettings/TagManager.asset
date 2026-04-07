@@ -12,6 +12,7 @@ TagManager:
   - EmptyBallons
   - FullBallons
   - TestingSystem
+  - WallNotebook
   layers:
   - Default
   - TransparentFX
