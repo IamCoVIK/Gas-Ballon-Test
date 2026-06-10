@@ -70,7 +70,7 @@ public abstract class Parameter
         }
         foreach (string word in WrongValueKeyWords)
         {
-            if (text.Contains(word))
+            if (text.Contains(word) && IsWrong)
             {
                 wrong = true;
             }
